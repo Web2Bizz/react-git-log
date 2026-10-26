@@ -2,10 +2,6 @@
 ![GitHub Release](https://img.shields.io/github/v/release/TomPlum/react-git-log?style=for-the-badge&logo=github&color=d6d6d6)
 ![NPM Type Definitions](https://img.shields.io/npm/types/%40tomplum%2Freact-git-log?style=for-the-badge&logo=typescript)
 ![npm package minimized gzipped size](https://img.shields.io/bundlejs/size/%40tomplum%2Freact-git-log?style=for-the-badge&logo=vite&color=gold&logoColor=gold)
-[![Coverage](https://img.shields.io/sonar/coverage/TomPlum_react-git-log?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge&logo=sonarqubecloud&logoColor=6fe86b&color=6fe86b)](https://sonarcloud.io/summary/overall?id=TomPlum_react-git-log)
-[![Reliability](https://img.shields.io/sonar/bugs/TomPlum_react-git-log?server=https%3A%2F%2Fsonarcloud.io&style=for-the-badge&logo=openbugbounty&color=orange)](https://sonarcloud.io/summary/new_code?id=TomPlum_react-git-log)
-[![Security](https://img.shields.io/badge/Snyk-Monitored-yellow?logo=snyk&style=for-the-badge&color=be86f0&logoColor=be86f0)](https://snyk.io/test/github/tomplum/react-git-log)
-![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/TomPlum/react-git-log/release.yml?style=for-the-badge&logo=github)
 
 # :seedling: React Git Log
 
