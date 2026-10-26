@@ -1,4 +1,4 @@
-export interface CommitBase {
+export type CommitBase = {
   /**
    * The unique hash (SHA) identifying the commit.
    */
@@ -60,7 +60,7 @@ export interface CommitBase {
 /**
  * Represents the author of a Git commit.
  */
-export interface CommitAuthor {
+export type CommitAuthor = {
   /**
    * The name of the commit author.
    */

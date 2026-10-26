@@ -1,3 +1,3 @@
-export interface GetLogEntriesProps {
+export type GetLogEntriesProps = {
   fileName: string
 }

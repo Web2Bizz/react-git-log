@@ -1,3 +1,3 @@
-export interface GitIconProps {
+export type GitIconProps = {
   className?: string
 }

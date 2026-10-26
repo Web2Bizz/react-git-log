@@ -171,7 +171,7 @@ describe('Table', () => {
   it('should inject custom commit fields into the row function', () => {
     const customRowFunction = vi.fn()
 
-    interface CustomCommit {
+    type CustomCommit = {
       customField: string
     }
 

@@ -1,6 +1,6 @@
 import { GitLogProps, HTMLGridGraphProps, TableProps } from '@tomplum/react-git-log'
 
-export interface GitLogStoryProps extends GitLogProps, HTMLGridGraphProps, TableProps {
+export type GitLogStoryProps = GitLogProps & HTMLGridGraphProps & TableProps & {
   pageSize?: number
   page?: number
   showTable: boolean

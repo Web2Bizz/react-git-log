@@ -1,4 +1,4 @@
-export interface LeftDownCurveProps {
+export type LeftDownCurveProps = {
   color: string
   showBottomBreakPoint?: boolean
   isPlaceholder?: boolean

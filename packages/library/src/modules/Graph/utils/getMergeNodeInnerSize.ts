@@ -1,4 +1,4 @@
-export interface GetMergeNodeInnerSizeProps {
+export type GetMergeNodeInnerSizeProps = {
   nodeSize: number
 }
 

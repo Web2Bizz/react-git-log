@@ -196,7 +196,7 @@ You can pass a generic type to the `GitLog` or `GitLogPaged` components to augme
 ```typescript jsx
 import { GitLog } from "@tomplum/react-git-log"
 
-interface MyCustomCommit {
+type MyCustomCommit = {
   myCustomField: string
 }
 
@@ -542,7 +542,7 @@ The following themes are available:
 
 Storybook Demo
 - Show code in stories
-- Fix React docgen in Storybook controls as it's not showing the JSDoc from the interface props
+- Fix React docgen in Storybook controls as it's not showing the JSDoc from the type props
 - Mobile responsiveness
 
 Graphs

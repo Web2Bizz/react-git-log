@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 
-export interface CommitMessageDataProps {
+export type CommitMessageDataProps = {
   index: number
   isIndex: boolean
   style: CSSProperties

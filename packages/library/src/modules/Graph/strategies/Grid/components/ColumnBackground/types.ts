@@ -1,4 +1,4 @@
-export interface ColumnBackgroundProps {
+export type ColumnBackgroundProps = {
   id: string
   index: number
   colour: string

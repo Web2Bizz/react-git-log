@@ -1,6 +1,6 @@
 import { Commit } from 'types/Commit'
 
-export interface CommitNodeTooltipProps {
+export type CommitNodeTooltipProps = {
   commit: Commit
   color?: string
 }

@@ -1,3 +1,3 @@
-export interface ShouldExist<T> {
+export type ShouldExist<T> = {
   shouldExist?: T
 }

@@ -2,7 +2,7 @@ import { Commit } from 'types/Commit'
 import { CSSProperties } from 'react'
 import { CustomTableRow } from 'modules/Table'
 
-export interface GitLogTableRowProps {
+export type GitLogTableRowProps = {
   index: number
   commit: Commit
   row?: CustomTableRow

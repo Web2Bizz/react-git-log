@@ -139,7 +139,7 @@ You can pass a generic type to the `GitLog` or `GitLogPaged` components to augme
 ```typescript jsx
 import { GitLog } from "@tomplum/react-git-log"
 
-interface MyCustomCommit {
+type MyCustomCommit = {
   myCustomField: string
 }
 

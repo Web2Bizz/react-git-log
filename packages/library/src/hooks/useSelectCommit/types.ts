@@ -1,6 +1,6 @@
 import { Commit } from 'types/Commit'
 
-export interface SelectCommitHandler {
+export type SelectCommitHandler = {
   selectCommitHandler: {
     onMouseOver: (commit: Commit) => void
     onMouseOut: () => void

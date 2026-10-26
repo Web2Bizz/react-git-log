@@ -1,5 +1,5 @@
 import { ThemeMode } from '@tomplum/react-git-log'
 
-export interface PackageInfoProps {
+export type PackageInfoProps = {
   theme: ThemeMode  
 }

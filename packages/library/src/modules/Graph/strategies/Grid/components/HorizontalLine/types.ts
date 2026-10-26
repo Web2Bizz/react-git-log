@@ -1,6 +1,6 @@
 import { GraphColumnState } from 'modules/Graph/strategies/Grid/components/GraphColumn'
 
-export interface HorizontalLineProps {
+export type HorizontalLineProps = {
   columnIndex: number
   commitNodeIndex: number
   columnColour: string

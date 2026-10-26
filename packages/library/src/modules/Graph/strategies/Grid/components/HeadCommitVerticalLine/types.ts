@@ -1,3 +1,3 @@
-export interface HeadCommitVerticalLineProps {
+export type HeadCommitVerticalLineProps = {
   columnColour: string
 }

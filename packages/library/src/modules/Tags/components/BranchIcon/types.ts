@@ -1,5 +1,5 @@
 import { HTMLAttributes } from 'react'
 
-export interface BranchIconProps extends HTMLAttributes<SVGElement> {
+export type BranchIconProps = HTMLAttributes<SVGElement> & {
   className?: string
 }

@@ -24,11 +24,11 @@ import { GitLogPaged } from './GitLogPaged'
 dayjs.extend(utc)
 dayjs.extend(relativeTime)
 
-interface DecoratedCommit extends Commit {
+type DecoratedCommit = Commit & {
   isMostRecentTagInstance: boolean
 }
 
-interface IntegrationTestProps {
+type IntegrationTestProps = {
   rowColumnState: Record<number, GraphColumnState[]>
   repositoryCommits: Commit[]
   Component: ElementType

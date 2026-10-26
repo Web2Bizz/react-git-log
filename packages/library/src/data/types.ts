@@ -1,6 +1,6 @@
 import { Commit } from 'types/Commit'
 
-export interface GraphData<T = unknown> {
+export type GraphData<T = unknown> = {
   /**
    * A map of the SHA1 commit hash
    * to an array of commit hashes
@@ -58,7 +58,7 @@ export interface GraphData<T = unknown> {
  * Represents a single edge in the git
  * log graph connecting two commit nodes.
  */
-export interface GraphEdge {
+export type GraphEdge = {
   /**
    * The location in the graph of
    * the source node that the edge

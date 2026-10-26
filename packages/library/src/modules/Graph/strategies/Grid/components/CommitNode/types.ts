@@ -1,6 +1,6 @@
 import { Commit } from 'types/Commit'
 
-export interface CommitNodeProps {
+export type CommitNodeProps = {
   colour: string
   commit: Commit
 }

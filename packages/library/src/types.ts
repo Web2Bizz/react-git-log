@@ -3,7 +3,7 @@ import { ThemeColours, ThemeMode } from './hooks/useTheme/types'
 import { GitLogEntry } from './types/GitLogEntry'
 import { Commit } from './types/Commit'
 
-interface GitLogCommonProps<T> {
+type GitLogCommonProps<T> = {
   /**
    * The git log entries to visualise
    * on the graph.
@@ -139,7 +139,7 @@ interface GitLogCommonProps<T> {
   classes?: GitLogStylingProps
 }
 
-export interface GitLogProps<T = unknown> extends GitLogCommonProps<T> {
+export type GitLogProps<T = unknown> = GitLogCommonProps<T> & {
   /**
    * The name of the branch that is
    * currently checked out.
@@ -165,7 +165,7 @@ export interface GitLogProps<T = unknown> extends GitLogCommonProps<T> {
   paging?: GitLogPaging
 }
 
-export interface GitLogPagedProps<T> extends GitLogCommonProps<T> {
+export type GitLogPagedProps<T> = GitLogCommonProps<T> & {
   /**
    * The name of the branch in which the Git log
    * entries belong to.
@@ -182,7 +182,7 @@ export interface GitLogPagedProps<T> extends GitLogCommonProps<T> {
   headCommitHash: string
 }
 
-export interface GitLogStylingProps {
+export type GitLogStylingProps = {
   /**
    * A class name passed to the wrapping
    * container (div) around the log.
@@ -203,7 +203,7 @@ export interface GitLogStylingProps {
   containerStyles?: CSSProperties
 }
 
-export interface GitLogPaging {
+export type GitLogPaging = {
   /**
    * The number of rows to show in
    * each page.
@@ -217,7 +217,7 @@ export interface GitLogPaging {
   page: number
 }
 
-export interface GitLogIndexStatus {
+export type GitLogIndexStatus = {
   /**
    * The number of modified files on
    * the checked-out branch according
@@ -240,7 +240,7 @@ export interface GitLogIndexStatus {
   deleted: number
 }
 
-export interface GitLogUrls {
+export type GitLogUrls = {
   /**
    * A resolved URL to a particular commit hash
    * on the external Git providers remote website.
@@ -254,7 +254,7 @@ export interface GitLogUrls {
   branch?: string
 }
 
-export interface GitLogUrlBuilderArgs<T = unknown> {
+export type GitLogUrlBuilderArgs<T = unknown> = {
   /**
    * Details of the given commit in context
    * of a URL. E.g. the one you clicked on

@@ -1,7 +1,7 @@
 import { CSSProperties, ReactElement } from 'react'
 import { Commit } from 'types/Commit'
 
-export interface TableProps {
+export type TableProps = {
   /**
    * A timestamp format string passed to DayJS
    * to format the timestamps of the commits
@@ -48,7 +48,7 @@ export interface TableProps {
 
 export type CustomTableRow = (props: CustomTableRowProps) => ReactElement<HTMLElement>
 
-export interface CustomTableRowProps {
+export type CustomTableRowProps = {
   /**
    * Details of the commit belonging
    * to this row.
@@ -83,7 +83,7 @@ export interface CustomTableRowProps {
   backgroundColour: string
 }
 
-export interface GitLogTableStylingProps {
+export type GitLogTableStylingProps = {
   /**
    * A React CSS styling object passed to
    * the container element of the table.

@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react'
 import { CustomTableRow } from 'modules/Table'
 
-export interface TableContainerProps {
+export type TableContainerProps = {
   rowQuantity: number
   className?: string
   row?: CustomTableRow

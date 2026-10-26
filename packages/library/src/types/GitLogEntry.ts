@@ -1,6 +1,6 @@
 import { CommitAuthor } from './Commit'
 
-export interface GitLogEntryBase {
+export type GitLogEntryBase = {
   /**
    * The unique hash identifier of the commit.
    */

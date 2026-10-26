@@ -1,7 +1,7 @@
 import { ReactNode } from 'react'
 import { ThemeMode } from '@tomplum/react-git-log'
 
-export interface CustomSelectProps {
+export type CustomSelectProps = {
   label: string
   value: string
   className?: string

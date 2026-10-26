@@ -1,7 +1,7 @@
 import { Children, isValidElement, ReactElement, ReactNode, useMemo } from 'react'
 import { GitLogCore } from 'components/GitLogCore/GitLogCore'
 
-export interface GetCoreComponentsProps {
+export type GetCoreComponentsProps = {
   children: ReactNode
   componentName: string
 }

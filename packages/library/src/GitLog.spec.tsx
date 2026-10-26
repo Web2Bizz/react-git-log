@@ -302,7 +302,7 @@ describe('GitLog', () => {
     it('should call onSelectCommit with custom data passed into the log entries', () => {
       const handleSelectCommit = vi.fn()
 
-      interface CustomCommit {
+      type CustomCommit = {
         customField: string,
         moreMetaData: number[]
       }
@@ -533,7 +533,7 @@ describe('GitLog', () => {
     it('should call onPreviewCommit with the custom data passed into the log', () => {
       const handlePreviewCommit = vi.fn()
 
-      interface CustomCommit {
+      type CustomCommit = {
         test: string
         anotherTest: number
       }

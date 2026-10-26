@@ -1,6 +1,6 @@
 import { ThemeColours, ThemeMode } from 'hooks/useTheme'
 
-export interface ThemeContextBag {
+export type ThemeContextBag = {
   /**
    * The variant of the default colour
    * them to apply to the log.
@@ -18,7 +18,7 @@ export interface ThemeContextBag {
   colours: string[]
 }
 
-export interface ThemeContextProviderProps {
+export type ThemeContextProviderProps = {
   theme: ThemeMode
   graphWidth: number
   colours: ThemeColours | string[]

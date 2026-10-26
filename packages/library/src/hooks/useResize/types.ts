@@ -1,6 +1,6 @@
 import { RefObject } from 'react'
 
-export interface ResizeState {
+export type ResizeState = {
   ref: RefObject<HTMLDivElement | null>
   width: number
   startResizing: () => void

@@ -17,7 +17,7 @@ import { Commit } from '../../types/Commit'
  */
 export type GraphOrientation = 'normal' | 'flipped'
 
-export interface CustomTooltipProps {
+export type CustomTooltipProps = {
   /**
    * Details of the commit that is
    * being hovered over.
@@ -45,7 +45,7 @@ export interface CustomTooltipProps {
  */
 export type CustomTooltip = (props: CustomTooltipProps) => ReactElement<HTMLElement>
 
-export interface HTMLGridGraphProps<T = unknown> extends GraphPropsCommon {
+export type HTMLGridGraphProps<T = unknown> = GraphPropsCommon & {
   /**
    * Whether to show the commit hash
    * to the side of the node in the graph.
@@ -85,7 +85,7 @@ export interface HTMLGridGraphProps<T = unknown> extends GraphPropsCommon {
   tooltip?: CustomTooltip
 }
 
-export interface GraphPropsCommon {
+export type GraphPropsCommon = {
   /**
    * The theme to apply the commit node
    * elements in the graph.

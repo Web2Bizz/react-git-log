@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import { ShouldExist } from 'test/elements/types'
 
-interface Row <T> extends ShouldExist<T> {
+type Row<T> = ShouldExist<T> & {
   row: number
 }
 

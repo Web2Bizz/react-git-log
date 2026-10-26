@@ -1,4 +1,4 @@
-export interface CurvedEdgeProps {
+export type CurvedEdgeProps = {
   id: string
   colour: string
   path: string

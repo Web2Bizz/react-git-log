@@ -4,7 +4,7 @@ import { Commit } from 'types/Commit'
 import { RowIndexToColumnStates } from 'modules/Graph/strategies/Grid/hooks/useColumnData'
 import { CustomCommitNode } from 'modules/Graph/strategies/Grid'
 
-export interface GraphContextBag {
+export type GraphContextBag = {
   /**
    * Whether to show the commit hash
    * to the side of the node in the graph.

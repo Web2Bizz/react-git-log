@@ -2,7 +2,7 @@ import { GraphMatrixColumns } from 'modules/Graph/strategies/Grid/GraphMatrixBui
 import { GraphBreakPointCheck } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/types'
 import { GraphMatrix } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
 
-interface BranchingEdgeRendererProps {
+type BranchingEdgeRendererProps = {
   /**
    * The columns belonging to the row
    * at index {@link targetRow}.

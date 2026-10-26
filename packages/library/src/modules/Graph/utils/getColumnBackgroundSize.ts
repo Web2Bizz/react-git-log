@@ -1,4 +1,4 @@
-export interface GetColumnBackgroundSizeProps {
+export type GetColumnBackgroundSizeProps = {
   nodeSize: number
 }
 

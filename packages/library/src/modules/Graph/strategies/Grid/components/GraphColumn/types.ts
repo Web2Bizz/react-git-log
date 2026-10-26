@@ -1,6 +1,6 @@
 import { Commit } from 'types/Commit'
 
-export interface GraphColumnProps {
+export type GraphColumnProps = {
   /**
    * The zero-based index of this column
    * in its row.
@@ -33,7 +33,7 @@ export interface GraphColumnProps {
   commitNodeIndex: number
 }
 
-export interface GraphColumnState {
+export type GraphColumnState = {
   /**
    * Indicates that this column contains
    * a commit node.

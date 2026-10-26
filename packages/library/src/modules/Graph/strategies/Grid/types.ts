@@ -7,7 +7,7 @@ import { Commit } from 'types/Commit'
  */
 export type CustomCommitNode<T> = (props: CustomCommitNodeProps<T>) => ReactElement
 
-export interface CustomCommitNodeProps<T> {
+export type CustomCommitNodeProps<T> = {
   /**
    * Details of the commit that this node
    * represents.

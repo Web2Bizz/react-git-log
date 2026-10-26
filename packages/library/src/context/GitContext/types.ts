@@ -3,7 +3,7 @@ import { GraphData } from 'data'
 import { CommitFilter, GitLogIndexStatus, GitLogStylingProps, GitLogUrlBuilder } from '../../types'
 import { GraphOrientation } from 'modules/Graph'
 
-export interface GitContextBag<T = unknown> {
+export type GitContextBag<T = unknown> = {
   /**
    * The name of the branch that is
    * currently checked out.
@@ -223,7 +223,7 @@ export interface GitContextBag<T = unknown> {
   filter?: CommitFilter<T>
 }
 
-export interface GraphPaging {
+export type GraphPaging = {
   /**
    * The zero-based index of the row
    * to show from in the log.

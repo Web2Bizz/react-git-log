@@ -1,6 +1,6 @@
 import { Commit } from 'types/Commit'
 
-export interface BranchTagProps {
+export type BranchTagProps = {
   id: string
   commit: Commit
   height: number

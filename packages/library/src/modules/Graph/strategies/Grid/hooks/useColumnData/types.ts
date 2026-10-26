@@ -1,12 +1,12 @@
 import { GraphMatrixColumns } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrixColumns'
 
-export interface GraphColumnDataProps {
+export type GraphColumnDataProps = {
   visibleCommits: number
 }
 
 export type RowIndexToColumnStates = Map<number, GraphMatrixColumns>
 
-export interface GraphColumnData {
+export type GraphColumnData = {
   columnData: RowIndexToColumnStates
   virtualColumns: number
 }

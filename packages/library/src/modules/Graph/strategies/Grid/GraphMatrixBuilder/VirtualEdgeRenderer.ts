@@ -4,7 +4,7 @@ import { CommitNodeLocation } from 'data'
 import { GraphMatrix } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
 import { GraphMatrixColumns } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrixColumns'
 
-export interface VirtualEdgeRendererProps {
+export type VirtualEdgeRendererProps = {
   matrix: GraphMatrix
   commits: Commit[]
   visibleCommits: number

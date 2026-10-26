@@ -1,3 +1,3 @@
-export interface TagIconProps {
+export type TagIconProps = {
   className?: string
 }

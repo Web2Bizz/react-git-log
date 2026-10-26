@@ -1,6 +1,6 @@
 import { ThemeMode } from '@tomplum/react-git-log'
 
-export interface DemoContextBag {
+export type DemoContextBag = {
   search?: string
   setSearch: (value: string) => void
   theme: ThemeMode

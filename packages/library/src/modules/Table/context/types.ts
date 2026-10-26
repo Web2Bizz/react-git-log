@@ -1,4 +1,4 @@
-export interface TableContextBag {
+export type TableContextBag = {
   /**
    * A timestamp format string passed to DayJS
    * to format the timestamps of the commits

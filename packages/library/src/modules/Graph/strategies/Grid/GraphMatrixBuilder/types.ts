@@ -2,7 +2,7 @@ import { CommitNodeLocation } from 'data'
 import { Commit } from 'types/Commit'
 import { GraphMatrix } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
 
-export interface GraphMatrixBuilderProps {
+export type GraphMatrixBuilderProps = {
   graphWidth: number
   commits: Commit[]
   positions: Map<string, CommitNodeLocation>
@@ -12,7 +12,7 @@ export interface GraphMatrixBuilderProps {
   isIndexVisible: boolean
 }
 
-export interface GraphBreakPointCheck {
+export type GraphBreakPointCheck = {
   location: CommitNodeLocation
   check: (matrix: GraphMatrix) => boolean
   position: GraphBreakPointPosition

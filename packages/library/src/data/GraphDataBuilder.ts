@@ -3,7 +3,7 @@ import { ActiveBranches } from './ActiveBranches'
 import { CommitNodeLocation, EdgeType, GraphEdge } from './types'
 import { ActiveNodes } from './ActiveNodes'
 
-export interface GraphDataBuilderProps<T> {
+export type GraphDataBuilderProps<T> = {
   commits: Commit<T>[],
   currentBranch: string,
   children: Map<string, string[]>
@@ -242,7 +242,7 @@ export class GraphDataBuilder<T> {
   }
 }
 
-interface CacheProps {
+type CacheProps = {
   parents: Map<string, string[]>
   visibleHashes: Set<string>
 }

@@ -1,6 +1,6 @@
 import { Commit } from 'types/Commit'
 
-export interface BranchTagTooltipProps {
+export type BranchTagTooltipProps = {
   id: string
   commit: Commit
 }

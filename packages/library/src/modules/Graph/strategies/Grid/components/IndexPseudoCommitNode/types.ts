@@ -1,4 +1,4 @@
-export interface IndexPseudoCommitNodeProps {
+export type IndexPseudoCommitNodeProps = {
   columnColour: string
   animate: boolean
 }

@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react'
 
-export interface LinkProps extends HTMLAttributes<HTMLAnchorElement> {
+export type LinkProps = HTMLAttributes<HTMLAnchorElement> & {
   text: string
   href?: string
   className?: string

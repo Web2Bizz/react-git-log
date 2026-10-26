@@ -1,11 +1,11 @@
 import { Commit } from 'types/Commit'
 import { GraphColumnState } from 'modules/Graph/strategies/Grid/components/GraphColumn'
 
-export interface PlaceholderDatum {
+export type PlaceholderDatum = {
   commit: Commit
   columns: GraphColumnState[]
 }
 
-export interface PlaceholderData {
+export type PlaceholderData = {
   placeholderData: PlaceholderDatum[]
 }

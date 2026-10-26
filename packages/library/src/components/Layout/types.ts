@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-export interface LayoutProps {
+export type LayoutProps = {
   tags?: ReactElement
   graph?: ReactElement
   table?: ReactElement

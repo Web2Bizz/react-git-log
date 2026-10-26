@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 
-export interface TimestampDataProps {
+export type TimestampDataProps = {
   index: number;
   isPlaceholder: boolean
   timestamp: string

@@ -1,6 +1,6 @@
 import { Commit } from 'types/Commit'
 
-export interface ThemeFunctions {
+export type ThemeFunctions = {
   /**
    * The current active theme mode.
    * @example light, dark
@@ -98,11 +98,11 @@ export interface ThemeFunctions {
   getGraphColumnSelectedBackgroundColour: (columnIndex: number) => string
 }
 
-export interface GetCommitNodeColoursArgs {
+export type GetCommitNodeColoursArgs = {
   columnColour: string
 }
 
-export interface CommitNodeColours {
+export type CommitNodeColours = {
   backgroundColour: string
   borderColour: string
 }

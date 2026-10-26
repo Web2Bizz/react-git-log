@@ -1,7 +1,7 @@
 import { ShouldExist } from './types'
 import { screen } from '@testing-library/react'
 
-interface WithHash<T> extends ShouldExist<T> {
+type WithHash<T> = ShouldExist<T> & {
   hash: string
 }
 

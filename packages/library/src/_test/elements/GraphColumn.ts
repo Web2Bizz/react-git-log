@@ -1,16 +1,16 @@
 import { screen } from '@testing-library/react'
 import { ShouldExist } from './types'
 
-interface At<T> extends ShouldExist<T> {
+type At<T> = ShouldExist<T> & {
   row: number
   column: number
 }
 
-interface Node<T> extends ShouldExist<T> {
+type Node<T> = ShouldExist<T> & {
   hash: string
 }
 
-interface Background<T> extends ShouldExist<T> {
+type Background<T> = ShouldExist<T> & {
   column: number
 }
 

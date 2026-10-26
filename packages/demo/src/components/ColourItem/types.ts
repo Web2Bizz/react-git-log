@@ -1,4 +1,4 @@
-export interface ColourItemProps {
+export type ColourItemProps = {
   id: string
   name: string
   selected: string
