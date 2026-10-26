@@ -11,7 +11,6 @@ import { graphColumn } from 'test/elements/GraphColumn'
 import { act } from 'react'
 import { Commit } from 'types/Commit'
 import { table } from 'test/elements/Table'
-import { createCanvas } from 'canvas'
 import { GitLogEntry } from 'types/GitLogEntry'
 
 const today = Date.UTC(2025, 2, 24, 18, 0, 0)
@@ -195,38 +194,6 @@ describe('GitLog', () => {
     })
   })
 
-  describe('Canvas2D Graph', () => {
-    beforeAll(() => {
-      // @ts-expect-error Only mocking some props for the sake of the test
-      HTMLCanvasElement.prototype.getContext = function () {
-        const canvas = createCanvas(this.width, this.height)
-        return canvas.getContext('2d')
-      }
-    })
-
-    it('should render correctly and match the snapshot of the GitLog component', { timeout: 1000 * 10 } ,() => {
-      const { asFragment } = render(
-        <GitLog
-          showHeaders
-          currentBranch='release'
-          entries={sleepRepositoryLogEntries}
-          indexStatus={{
-            added: 2,
-            deleted: 1,
-            modified: 10
-          }}
-          urls={urlBuilderFunction}
-        >
-          <GitLog.Tags />
-          <GitLog.GraphCanvas2D />
-          <GitLog.Table />
-        </GitLog>
-      )
-
-      expect(asFragment()).toMatchSnapshot()
-    })
-  })
-
   it('should log a warning if the graph subcomponent is not rendered', () => {
     const consoleWarn = vi.spyOn(console, 'warn')
 
@@ -238,7 +205,7 @@ describe('GitLog', () => {
     )
 
     expect(consoleWarn).toHaveBeenCalledExactlyOnceWith(
-      'react-git-log is not designed to work without a <GitLog.GraphCanvas2D /> or a <GitLog.GraphHTMLGrid /> component.'
+      'react-git-log is not designed to work without a <GitLog.GraphHTMLGrid /> component.'
     )
   })
 
@@ -293,42 +260,6 @@ describe('GitLog', () => {
 
     expect(renderBadComponent).toThrow(
       '<GitLog /> can only have one <GitLog.GraphHTMLGrid /> child.'
-    )
-  })
-
-  it('should throw an error if the canvas graph subcomponent is rendered twice', () => {
-    const renderBadComponent = () => {
-      render(
-        <GitLog
-          entries={[]}
-          currentBranch='main'
-        >
-          <GitLog.GraphCanvas2D />
-          <GitLog.GraphCanvas2D />
-        </GitLog>
-      )
-    }
-
-    expect(renderBadComponent).toThrow(
-      '<GitLog /> can only have one <GitLog.GraphCanvas2D /> child.'
-    )
-  })
-
-  it('should throw an error if graph subcomponent is rendered twice with different variants', () => {
-    const renderBadComponent = () => {
-      render(
-        <GitLog
-          entries={[]}
-          currentBranch='main'
-        >
-          <GitLog.GraphCanvas2D />
-          <GitLog.GraphHTMLGrid />
-        </GitLog>
-      )
-    }
-
-    expect(renderBadComponent).toThrow(
-      '<GitLog /> can only have one <GitLog.GraphHTMLGrid /> or <GitLog.GraphCanvas2D /> child.'
     )
   })
 

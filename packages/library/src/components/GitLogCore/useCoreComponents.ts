@@ -6,17 +6,9 @@ export interface GetCoreComponentsProps {
   componentName: string
 }
 
-const validateGraphChildren = (graph: ReactElement | undefined, child: ReactElement, componentName: string) => {
-  if (graph && graph.type === GitLogCore.GraphCanvas2D && child.type === GitLogCore.GraphCanvas2D) {
-    throw new Error(`<${componentName} /> can only have one <${componentName}.GraphCanvas2D /> child.`)
-  }
-
-  if (graph && graph.type === GitLogCore.GraphHTMLGrid && child.type === GitLogCore.GraphHTMLGrid) {
+const validateGraphChildren = (graph: ReactElement | undefined, componentName: string) => {
+  if (graph) {
     throw new Error(`<${componentName} /> can only have one <${componentName}.GraphHTMLGrid /> child.`)
-  }
-
-  if (graph && graph.type !== child.type) {
-    throw new Error(`<${componentName} /> can only have one <${componentName}.GraphHTMLGrid /> or <${componentName}.GraphCanvas2D /> child.`)
   }
 }
 
@@ -34,8 +26,8 @@ export const useCoreComponents = ({ children, componentName }: GetCoreComponents
           }
 
           tags = child
-        } else if (child.type === GitLogCore.GraphCanvas2D || child.type === GitLogCore.GraphHTMLGrid) {
-          validateGraphChildren(graph, child, componentName)
+        } else if (child.type === GitLogCore.GraphHTMLGrid) {
+          validateGraphChildren(graph, componentName)
 
           graph = child
         } else if (child.type === GitLogCore.Table) {
@@ -49,7 +41,7 @@ export const useCoreComponents = ({ children, componentName }: GetCoreComponents
     })
 
     if (!graph) {
-      console.warn(`react-git-log is not designed to work without a <${componentName}.GraphCanvas2D /> or a <${componentName}.GraphHTMLGrid /> component.`)
+      console.warn(`react-git-log is not designed to work without a <${componentName}.GraphHTMLGrid /> component.`)
     }
 
     return { tags, graph, table }

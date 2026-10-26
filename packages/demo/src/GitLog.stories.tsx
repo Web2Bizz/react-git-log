@@ -27,7 +27,6 @@ const meta: Meta<GitLogStoryProps> = {
     enableResize: false,
     nodeTheme: 'default',
     breakPointTheme: 'dot',
-    renderStrategy: 'html-grid',
     nodeSize: 20,
     orientation: 'normal',
     onSelectCommit: (commit?: Commit) => {
@@ -124,20 +123,6 @@ const meta: Meta<GitLogStoryProps> = {
       table: {
         category: 'Visibility'
       }
-    },
-    renderStrategy: {
-      name: 'Graph Render Strategy',
-      table: {
-        category: 'Visibility'
-      },
-      control: {
-        type: 'select',
-        labels: {
-          'html-grid': 'HTML Grid',
-          canvas: 'Canvas2D'
-        }
-      },
-      options: ['html-grid', 'canvas'],
     },
     enableSelectedCommitStyling: {
       name: 'Enable Selection Styling',

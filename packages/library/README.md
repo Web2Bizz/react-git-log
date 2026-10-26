@@ -23,7 +23,6 @@ A flexible and interactive React component for visualising Git commit history. D
     * [GitLogPaged](#gitlogpaged-1)
     * [GraphHTMLGrid](#graphhtmlgrid)
       * [CustomCommitNode](#customcommitnode)
-    * [GraphCanvas2D](#graphcanvas2d)
     * [Table](#table)
       * [GitLogTableStylingProps](#gitlogtablestylingprops)
       * [CustomTableRow](#customtablerow)
@@ -86,7 +85,7 @@ A flexible and interactive React component for visualising Git commit history. D
       return (
         <GitLog entries={entries} currentBranch={currentBranch}>
           <GitLog.Tags />
-          <GitLog.GraphCanvas2D />
+          <GitLog.GraphHTMLGrid />
           <GitLog.Table />
         </GitLog>
       )
@@ -334,20 +333,6 @@ The following properties are injected into the functions `props` argument:
 | `commit`           | `Commit` | Details of the commit that the tooltip is being rendered for.                 |
 | `borderColour`     | `string` | The border colour of the commit based on the column in its and the theme.     |
 | `backgroundColour` | `number` | The background colour of the commit based on the column in its and the theme. |
-
-### GraphCanvas2D
-
-> [!WARNING]
-> This Canvas2D variant of the graph is in-complete and may have rendering bugs. It's also not as feature-rich as the HTML variant due to canvas API limitations and unfinished work.
-
-
-| Property          | Type                                  | Description                                                                                                    |
-|-------------------|---------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| `nodeTheme`       | [`NodeTheme`](#nodetheme)             | Theme applied to commit node elements in the graph.                                                            |
-| `nodeSize`        | `number`                              | The diameter, in pixels, of the commits nodes. Should be divisible by 2 and between 8 and 30 to render nicely. |
-| `orientation`     | `normal \| flipped`                   | The orientation of the graph. Normal renders the checked-out branch on the left, flipped on the right.         |
-| `enableResize`    | `boolean`                             | Enables horizontal resizing of the graph. Default: `false`.                                                    |
-| `breakPointTheme` | [`BreakPointTheme`](#breakpointtheme) | Changes how the break-points between rows render when the log is being filtered.                               |
 
 ### Table
 

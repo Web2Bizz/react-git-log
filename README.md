@@ -19,9 +19,7 @@ A flexible and interactive React component for visualising Git commit history. D
   * [Pagination](#pagination)
     * [Client-Side](#client-side)
     * [Server-Side](#server-side)
-  * [Graph Rendering Strategies](#graph-rendering-strategies)
-    * [HTML Grid](#html-grid)
-    * [Canvas 2D](#canvas-2d)
+  * [Graph](#graph)
 * [Using the component](#using-the-component)
 * [Git Log Data](#git-log-data)
 * [Component Props](#component-props)
@@ -34,7 +32,6 @@ A flexible and interactive React component for visualising Git commit history. D
     * [GitLogPaged](#gitlogpaged-1)
     * [GraphHTMLGrid](#graphhtmlgrid)
       * [CustomCommitNode](#customcommitnode)
-    * [GraphCanvas2D](#graphcanvas2d)
     * [Table](#table)
       * [GitLogTableStylingProps](#gitlogtablestylingprops)
       * [CustomTableRow](#customtablerow)
@@ -54,7 +51,6 @@ A flexible and interactive React component for visualising Git commit history. D
 # Features
 
 - :seedling: Responsive commit history graph
-- :computer: Dual rendering strategy support
 - :memo: Table with commit message and date
 - :bookmark: Branch and tagging information
 - :art: Custom theming API
@@ -91,14 +87,7 @@ const YourComponent = () => {
 }
 ```
 
-## Graph Rendering Strategies
-
-The commit history graph visual can be rendered in different ways depending on your needs.
-
-### HTML Grid
-
-This implementation of the graph was designed with testing in mind. 
-The traditional way to draw such an image would with a HTML `canvas` element. Which, while efficient (and easier to implement), is hard to programmatically assert its correctness.
+## Graph
 
 This graph uses a grid system. Each row has N number of columns rendered in it, where N is equal to the maximum number of concurrent active branches in the given git log entry data.
 This means that each column is aware of its state and what needs to be drawn (A commit node, vertical line, curved merge line etc.).
@@ -107,26 +96,11 @@ Each column is responsive as its row is stretched vertically or horizontally.
 
 ![grid-system.gif](docs/images/grid-system.gif)
 
-This strategy can be used by rendering the `<GitLog.GraphHTMLGrid />` subcomponent under the `<GitLog />`.
+This graph can be rendered with the `<GitLog.GraphHTMLGrid />` subcomponent under the `<GitLog />`.
 
 ```typescript jsx
 <GitLog entries={[]} branchName='main'>
   <GitLog.GraphHTMLGrid />
-</GitLog>
-```
-
-### Canvas 2D
-
-> [!WARNING]
-> This Canvas2D variant of the graph is in-complete and may have rendering bugs. It's also not as feature-rich as the HTML variant due to canvas API limitations and unfinished work.
-
-This implementation uses a standard HTML `canvas` element with a `2d` rendering context.
-
-This strategy can be used by rendering the `<GitLog.GraphCanvas2D />` subcomponent under the `<GitLog />`.
-
-```typescript jsx
-<GitLog entries={[]} branchName='main'>
-  <GitLog.GraphCanvas2D />
 </GitLog>
 ```
 
@@ -172,7 +146,7 @@ This strategy can be used by rendering the `<GitLog.GraphCanvas2D />` subcompone
       return (
         <GitLog entries={entries} currentBranch={currentBranch}>
           <GitLog.Tags />
-          <GitLog.GraphCanvas2D />
+          <GitLog.GraphHTMLGrid />
           <GitLog.Table />
         </GitLog>
       )
@@ -421,16 +395,6 @@ The following properties are injected into the functions `props` argument:
 | `borderColour`     | `string` | The border colour of the commit based on the column in its and the theme.     |
 | `backgroundColour` | `number` | The background colour of the commit based on the column in its and the theme. |
 
-### GraphCanvas2D
-
-| Property          | Type                                  | Description                                                                                                    |
-|-------------------|---------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| `nodeTheme`       | [`NodeTheme`](#nodetheme)             | Theme applied to commit node elements in the graph.                                                            |
-| `nodeSize`        | `number`                              | The diameter, in pixels, of the commits nodes. Should be divisible by 2 and between 8 and 30 to render nicely. |
-| `orientation`     | `normal \| flipped`                   | The orientation of the graph. Normal renders the checked-out branch on the left, flipped on the right.         |
-| `enableResize`    | `boolean`                             | Enables horizontal resizing of the graph. Default: `false`.                                                    |
-| `breakPointTheme` | [`BreakPointTheme`](#breakpointtheme) | Changes how the break-points between rows render when the log is being filtered.                               |
-
 ### Table
 
 | Property          | Type                                                  | Description                                                                           |
@@ -596,14 +560,5 @@ Graphs
   - Hover effect on lines to show missing commits?
   - Prop to override graph fallback? No search results yields the placeholder nodes
 
-Canvas2D
-- Custom prop for BG colour because of how canvas alpha channel works
-- Tooltip support
-- Row spacing support
-
 # Known Bugs
-- The `GraphCanvas2D` component has the preview/select background cut off by canvases left-edge.
-- The `GraphCanvas2D` component does not set the correct selected node BG colour, it's slightly off from the table row.
-- The `GraphCanvas2D` component assumes dark theme is enabled and uses a dark background colour to emulate transparency in its gradients.
 - The `GraphHTMLGrid` component renders the node-edge gradient to last node, but should be solid.
-- The `GraphHTMLGrid` component is missing node edges from some commit nodes that are present in the canvas variant.

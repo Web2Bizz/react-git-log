@@ -22,7 +22,6 @@ const meta: Meta<GitLogPagedStoryProps> = {
     nodeTheme: 'default',
     breakPointTheme: 'dot',
     showGitIndex: true,
-    renderStrategy: 'html-grid',
     nodeSize: 20,
     orientation: 'normal',
     onSelectCommit: (commit?: Commit) => {
@@ -108,20 +107,6 @@ const meta: Meta<GitLogPagedStoryProps> = {
       table: {
         category: 'Visibility'
       }
-    },
-    renderStrategy: {
-      name: 'Graph Render Strategy',
-      table: {
-        category: 'Visibility'
-      },
-      control: {
-        type: 'select',
-        labels: {
-          'html-grid': 'HTML Grid',
-          canvas: 'Canvas2D'
-        }
-      },
-      options: ['html-grid', 'canvas'],
     },
     enableSelectedCommitStyling: {
       name: 'Enable Selection Styling',

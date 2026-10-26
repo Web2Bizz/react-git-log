@@ -1,3 +1,3 @@
-import { Canvas2DGraphProps, HTMLGridGraphProps } from 'modules/Graph'
+import { HTMLGridGraphProps } from 'modules/Graph'
 
-export type GraphCoreProps<T> = HTMLGridGraphProps<T> & Canvas2DGraphProps
+export type GraphCoreProps<T> = HTMLGridGraphProps<T>

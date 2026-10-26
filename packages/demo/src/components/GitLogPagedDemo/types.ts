@@ -1,7 +1,6 @@
-import { Canvas2DGraphProps, GitLogPagedProps, HTMLGridGraphProps, TableProps } from '@tomplum/react-git-log'
+import { GitLogPagedProps, HTMLGridGraphProps, TableProps } from '@tomplum/react-git-log'
 
-export interface GitLogPagedStoryProps extends GitLogPagedProps<unknown>, HTMLGridGraphProps, Canvas2DGraphProps, TableProps {
+export interface GitLogPagedStoryProps extends GitLogPagedProps<unknown>, HTMLGridGraphProps, TableProps {
   showTable: boolean
   showCommitNodeHashes: boolean
-  renderStrategy: 'html-grid' | 'canvas'
 }

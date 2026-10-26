@@ -45,8 +45,6 @@ export interface CustomTooltipProps {
  */
 export type CustomTooltip = (props: CustomTooltipProps) => ReactElement<HTMLElement>
 
-export type Canvas2DGraphProps = GraphPropsCommon
-
 export interface HTMLGridGraphProps<T = unknown> extends GraphPropsCommon {
   /**
    * Whether to show the commit hash

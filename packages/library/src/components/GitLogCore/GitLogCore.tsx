@@ -3,7 +3,7 @@ import { PropsWithChildren, useCallback, useMemo, useState } from 'react'
 import { GitContext, GitContextBag } from 'context/GitContext'
 import { computeRelationships, GraphData, temporalTopologicalSort, GraphDataBuilder } from 'data'
 import { Tags } from 'modules/Tags'
-import { GraphCanvas2D, GraphHTMLGrid, GraphOrientation } from 'modules/Graph'
+import { GraphHTMLGrid, GraphOrientation } from 'modules/Graph'
 import { Table } from 'modules/Table'
 import { Layout } from 'components/Layout'
 import { Commit } from 'types/Commit'
@@ -226,6 +226,5 @@ export const GitLogCore = <T,>({
 }
 
 GitLogCore.Tags = Tags
-GitLogCore.GraphCanvas2D = GraphCanvas2D
 GitLogCore.GraphHTMLGrid = GraphHTMLGrid
 GitLogCore.Table = Table

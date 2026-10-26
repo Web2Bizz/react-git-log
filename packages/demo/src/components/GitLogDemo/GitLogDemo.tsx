@@ -69,26 +69,15 @@ export const GitLogDemo = (args: GitLogStoryProps) => {
             <GitLog.Tags />
           )}
 
-          {args.renderStrategy === 'html-grid' && (
-            <GitLog.GraphHTMLGrid
-              nodeSize={args.nodeSize}
-              nodeTheme={args.nodeTheme}
-              orientation={args.orientation}
-              enableResize={args.enableResize}
-              breakPointTheme={args.breakPointTheme}
-              showCommitNodeHashes={args.showCommitNodeHashes}
-              showCommitNodeTooltips={args.showCommitNodeTooltips}
-            />
-          )}
-
-          {args.renderStrategy === 'canvas' && (
-            <GitLog.GraphCanvas2D
-              nodeSize={args.nodeSize}
-              nodeTheme={args.nodeTheme}
-              orientation={args.orientation}
-              enableResize={args.enableResize}
-            />
-          )}
+          <GitLog.GraphHTMLGrid
+            nodeSize={args.nodeSize}
+            nodeTheme={args.nodeTheme}
+            orientation={args.orientation}
+            enableResize={args.enableResize}
+            breakPointTheme={args.breakPointTheme}
+            showCommitNodeHashes={args.showCommitNodeHashes}
+            showCommitNodeTooltips={args.showCommitNodeTooltips}
+          />
 
           {args.showTable && (
             <GitLog.Table
