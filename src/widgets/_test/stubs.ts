@@ -3,8 +3,8 @@ import { GitLogEntry } from 'types/GitLogEntry'
 import { GitContextBag } from 'context/GitContext'
 import { ThemeFunctions } from 'hooks/useTheme'
 import { GraphData } from 'data'
-import { GraphColumnState } from 'modules/Graph/strategies/Grid/components/GraphColumn'
-import { GraphContextBag } from 'modules/Graph/context'
+import { GraphColumnState } from 'components/GraphColumn'
+import { GraphContextBag } from 'context/GraphContext'
 import { ThemeContextBag } from 'context/ThemeContext'
 
 export const commit = <T = unknown>(commit?: Partial<Commit<T>>): Commit<T> => ({
