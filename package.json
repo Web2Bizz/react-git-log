@@ -1,31 +1,130 @@
 {
-  "name": "react-git-log-monorepo",
-  "private": true,
+  "name": "@tomplum/react-git-log",
+  "author": "Thomas Plumpton",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomPlum/react-git-log.git"
+  },
+  "description": "A flexible, themable, React component for visualising Git commit history, branch and tag metadata.",
+  "version": "3.5.1",
+  "license": "Apache-2.0",
   "type": "module",
-  "workspaces": [
-    "packages/library",
-    "packages/demo"
+  "main": "dist/react-git-log.js",
+  "module": "dist/react-git-log.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/react-git-log.js"
+  },
+  "files": [
+    "dist/",
+    "package.json",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
-    "lint": "eslint packages/{library,demo}/src/**/*.{ts,tsx}",
-    "lint:fix": "eslint packages/{library,demo}/src/**/*.{ts,tsx} --fix",
-    "clean": "npm run clean --workspace=*"
+    "dev": "vite",
+    "dev:watch": "vite build --watch",
+    "bundle:analyse": "VITE_BUNDLE_ANALYSIS=true vite build",
+    "build": "tsc --project tsconfig.build.json && vite build",
+    "build:watch": "tsc --project tsconfig.build.json --watch",
+    "preview": "vite preview",
+    "test": "vitest --watch --coverage",
+    "test:ui": "vitest --watch --ui --coverage",
+    "test:unit": "vitest --watch --coverage --exclude '**/*.integration.spec.tsx'",
+    "test:unit:ui": "vitest --watch --coverage --ui --exclude '**/*.integration.spec.tsx'",
+    "test:integration": "vitest --watch --coverage .integration.spec.tsx",
+    "test:unit:ci": "vitest --run --coverage --reporter=verbose --exclude '**/*.integration.spec.tsx'",
+    "test:integration:ci": "vitest --run --coverage --coverage.reportsDirectory=coverage/integration --reporter=verbose .integration.spec.tsx",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "release:local": "npm run build && npm pack",
+    "clean": "rm -rf node_modules dist coverage",
+    "lint": "eslint src/**/*.{ts,tsx} .storybook/**/*.{ts,tsx}",
+    "lint:fix": "eslint src/**/*.{ts,tsx} .storybook/**/*.{ts,tsx} --fix"
+  },
+  "dependencies": {
+    "@uidotdev/usehooks": "^2.4.1",
+    "classnames": "^2.5.1",
+    "dayjs": "^1.11.13",
+    "fastpriorityqueue": "^0.7.5",
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0",
+    "react-tiny-popover": "^8.1.6"
+  },
+  "peerDependencies": {
+    "react": ">=19.0.0",
+    "react-dom": ">=19.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^5.0.0",
     "@eslint/js": "^9.21.0",
+    "@storybook/addon-docs": "^10.1.11",
+    "@storybook/react-vite": "^10.1.11",
     "@stylistic/eslint-plugin": "^5.0.0",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
     "@typescript-eslint/parser": "^8.34.0",
+    "@vitejs/plugin-react-swc": "^4.0.0",
+    "@vitest/browser": "^4.0.0",
+    "@vitest/coverage-v8": "^4.0.0",
+    "@vitest/ui": "^4.0.0",
     "eslint": "^9.21.0",
     "eslint-import-resolver-typescript": "^4.4.3",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-react-hooks": "^7.0.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "eslint-plugin-storybook": "^10.1.11",
+    "estree-walker": "^3.0.3",
     "globals": "^17.0.0",
-    "typescript-eslint": "^8.34.1"
+    "jsdom": "^26.0.0",
+    "sass": "^1.85.1",
+    "storybook": "^10.1.11",
+    "typescript": "~5.9.0",
+    "typescript-eslint": "^8.34.1",
+    "vite": "^7.0.0",
+    "vite-bundle-analyzer": "^1.0.0",
+    "vite-plugin-dts": "^5.0.0",
+    "vite-plugin-lib-inject-css": "^2.2.1",
+    "vite-plugin-svgr": "^4.3.0",
+    "vite-tsconfig-paths": "^6.0.0",
+    "vitest": "^4.0.0"
   },
-  "overrides": {
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
-  }
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "browserslist": [
+    "defaults",
+    "not dead",
+    "maintained node versions"
+  ],
+  "keywords": [
+    "react",
+    "git",
+    "git-log",
+    "visualization",
+    "react-component",
+    "git-history",
+    "commit-graph",
+    "react-git",
+    "react-visualization",
+    "branching",
+    "git-graph",
+    "react-git-graph",
+    "version-control",
+    "git-ui"
+  ]
 }
