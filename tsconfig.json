@@ -5,17 +5,18 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "baseUrl": "./",
+    "baseUrl": "./src/widgets",
     "paths": {
-      "modules/*": ["src/modules/*"],
-      "assets/*": ["src/assets/*"],
-      "components/*": ["src/components/*"],
-      "context/*": ["src/context/*"],
-      "hooks/*": ["src/hooks/*"],
-      "constants/*": ["src/constants/*"],
-      "types/*": ["src/types/*"],
-      "test/*": ["src/_test/*"],
-      "data": ["src/data/index.ts"]
+      "modules/*": ["modules/*"],
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "context/*": ["context/*"],
+      "hooks/*": ["hooks/*"],
+      "constants/*": ["constants/*"],
+      "utils/*": ["utils/*"],
+      "types/*": ["types/*"],
+      "test/*": ["_test/*"],
+      "data": ["data/index.ts"]
     },
     "types": ["vitest/globals", "vite/client"],
 
@@ -43,8 +44,10 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/types/svg.d.ts",
-    "vite.config.ts"
+    "src/widgets/types/svg.d.ts",
+    "vite.config.ts",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx"
   ],
   "exclude": [
     "node_modules",

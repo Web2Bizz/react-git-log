@@ -16,7 +16,7 @@ export default tseslint.config(
   imports.flatConfigs.recommended,
   {
     name: 'react-git-log',
-    files: ['packages/**/*.{ts,tsx}'],
+    files: ['src/**/*.{ts,tsx}', '.storybook/**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
@@ -50,8 +50,7 @@ export default tseslint.config(
         typescript: {
           noWarnOnMultipleProjects: true,
           project: [
-            './packages/library/tsconfig.json',
-            './packages/demo/tsconfig.json',
+            './tsconfig.json',
           ]
         }
       }

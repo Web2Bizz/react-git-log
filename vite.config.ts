@@ -26,15 +26,17 @@ export default defineConfig(({ mode }) => {
     ],
     resolve: {
       alias: {
-        modules: resolve(__dirname, '/src/modules'),
-        assets: resolve(__dirname, '/src/assets'),
-        components: resolve(__dirname, '/src/components'),
-        context: resolve(__dirname, '/src/context'),
-        hooks: resolve(__dirname, '/src/hooks'),
-        constants: resolve(__dirname, '/src/constants'),
-        data: resolve(__dirname, 'src/data'),
-        test: resolve(__dirname, 'src/_test'),
-        types: resolve(__dirname, 'src/types')
+        widgets: resolve(__dirname, 'src/widgets'),
+        modules: resolve(__dirname, 'src/widgets/modules'),
+        assets: resolve(__dirname, 'src/widgets/assets'),
+        components: resolve(__dirname, 'src/widgets/components'),
+        context: resolve(__dirname, 'src/widgets/context'),
+        hooks: resolve(__dirname, 'src/widgets/hooks'),
+        constants: resolve(__dirname, 'src/widgets/constants'),
+        utils: resolve(__dirname, 'src/widgets/utils'),
+        data: resolve(__dirname, 'src/widgets/data'),
+        test: resolve(__dirname, 'src/widgets/_test'),
+        types: resolve(__dirname, 'src/widgets/types')
       }
     },
     build: {
@@ -43,7 +45,7 @@ export default defineConfig(({ mode }) => {
         formats: ['es'],
         name: 'react-git-log',
         fileName: 'react-git-log',
-        entry: resolve(__dirname, '/src/index.ts')
+        entry: resolve(__dirname, 'src/widgets/index.ts')
       },
       rollupOptions: {
         external: ['react', 'react-dom'],
@@ -72,7 +74,7 @@ export default defineConfig(({ mode }) => {
           classNameStrategy: 'non-scoped'
         }
       },
-      setupFiles: ['./src/_test/vitest.setup.ts'],
+      setupFiles: ['./src/widgets/_test/vitest.setup.ts'],
       coverage: {
         all: true,
         provider: 'v8',
@@ -84,10 +86,10 @@ export default defineConfig(({ mode }) => {
         exclude: [
           'node_modules/',
           'dist',
-          'src/_test',
-          'src/types',
-          'src/index.ts',
-          'src/types.ts'
+          'src/widgets/_test',
+          'src/widgets/types',
+          'src/widgets/index.ts',
+          'src/widgets/types.ts'
         ]
       }
     }
