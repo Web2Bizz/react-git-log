@@ -1,39 +1,39 @@
-import styles from './LeftDownCurve.module.scss'
+import styles from './LeftUpCurve.module.scss'
 import { CURVE_SIZE, ROW_HEIGHT } from 'constants/constants'
-import { CurvedEdge } from 'components/CurvedEdge'
+import { CurvedEdge } from 'components/Curve'
 import { useGitContext } from 'hooks/useGitContext'
-import { LeftDownCurveProps } from 'types/LeftDownCurve'
+import { LeftUpCurveProps } from 'types/LeftUpCurve'
 import { BreakPoint } from 'components/BreakPoint'
 
-export const LeftDownCurve = ({ color, isPlaceholder, showBottomBreakPoint }: LeftDownCurveProps) => {
+export const LeftUpCurve = ({ color, isPlaceholder, showTopBreakPoint }: LeftUpCurveProps) => {
   const { rowSpacing } = useGitContext()
 
   const borderStyle = isPlaceholder ? 'dotted' : 'solid'
-
+  
   return (
-    <div id='left-down-curve' data-testid='left-down-curve' className={styles.container}>
-      {showBottomBreakPoint && (
+    <div id='left-up-curve' data-testid='left-up-curve' className={styles.container}>
+      {showTopBreakPoint && (
         <BreakPoint
+          position='top'
           color={color}
-          position='bottom'
           style={{
             slash: { left: '50%' },
-            dot: { left: '50%' },
             arrow: { left: 'calc(50% - 3px)' },
+            dot: { left: '50%' },
             ring: { left: '50%' },
             line: { left: 'calc(50% - 6px)' },
             'zig-zag': { left: 'calc(50% - 2px)' },
-            'double-line': { left: 'calc(50% - 3px)' }
+            'double-line': { left: 'calc(50% - 3px)' },
           }}
         />
       )}
 
       <div
-        id='left-down-curve-bottom-line'
-        data-testid='left-down-curve-bottom-line'
+        id='left-up-curve-top-line'
+        data-testid='left-up-curve-top-line'
         className={styles.line}
         style={{
-          bottom: 0,
+          top: 0,
           left: 'calc(50% - 1px)',
           borderRight: `2px ${borderStyle} ${color}`,
           height: (ROW_HEIGHT + rowSpacing - CURVE_SIZE) / 2
@@ -43,13 +43,13 @@ export const LeftDownCurve = ({ color, isPlaceholder, showBottomBreakPoint }: Le
       <CurvedEdge
         colour={color}
         dashed={isPlaceholder}
-        id='left-down-curve-curved-line'
-        path='M 0,53 A 50,50 0 0,1 50,100'
+        id='left-up-curve-curved-line'
+        path='M 0,53 A 50,50 0 0,0 50,0'
       />
 
       <div
-        id='left-down-curve-left-line'
-        data-testid='left-down-curve-left-line'
+        id='left-up-curve-left-line'
+        data-testid='left-up-curve-left-line'
         className={styles.line}
         style={{
           left: 0,
