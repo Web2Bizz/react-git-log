@@ -2,7 +2,7 @@ import { useTheme } from 'hooks/useTheme'
 import classNames from 'classnames'
 import styles from './GitIcon.module.scss'
 import Icon from 'assets/git.svg?react'
-import { GitIconProps } from './types'
+import { GitIconProps } from 'types/GitIcon'
 
 export const GitIcon = ({ className }: GitIconProps) => {
   const { textColour, shiftAlphaChannel } = useTheme()

@@ -1,6 +1,6 @@
 import styles from './BranchTagTooltip.module.scss'
 import { useTheme } from 'hooks/useTheme'
-import { BranchTagTooltipProps } from './types'
+import { BranchTagTooltipProps } from 'types/BranchTagTooltip'
 
 export const BranchTagTooltip = ({ id, commit }: BranchTagTooltipProps) => {
   const { textColour, getTooltipBackground, getCommitColour } = useTheme()

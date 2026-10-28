@@ -1,10 +1,10 @@
-import { useGitContext } from 'context/GitContext'
-import { formatBranch } from 'modules/Tags/utils/formatBranch'
+import { useGitContext } from 'hooks/useGitContext'
+import { formatBranch } from 'utils/formatBranch'
 import { useMemo } from 'react'
 import styles from './TagLabel.module.scss'
 import { Link } from '../Link'
 import { TagIcon } from '../TagIcon'
-import { TagLabelProps } from './types'
+import { TagLabelProps } from 'types/TagLabel'
 
 export const TagLabel = ({ commit }: TagLabelProps) => {
   const { remoteProviderUrlBuilder } = useGitContext()

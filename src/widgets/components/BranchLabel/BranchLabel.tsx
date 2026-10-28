@@ -1,10 +1,10 @@
-import { useGitContext } from 'context/GitContext'
+import { useGitContext } from 'hooks/useGitContext'
 import styles from './BranchLabel.module.scss'
-import { formatBranch } from 'modules/Tags/utils/formatBranch'
+import { formatBranch } from 'utils/formatBranch'
 import { useMemo } from 'react'
 import { Link } from '../Link'
 import { BranchIcon } from '../BranchIcon'
-import { BranchLabelProps } from './types'
+import { BranchLabelProps } from 'types/BranchLabel'
 
 export const BranchLabel = ({ commit }: BranchLabelProps) => {
   const { remoteProviderUrlBuilder } = useGitContext()

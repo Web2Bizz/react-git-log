@@ -4,7 +4,7 @@ import { commit, gitContextBag, themeFunctions } from 'test/stubs'
 import { tag } from 'test/elements/Tag'
 import { userEvent } from '@testing-library/user-event'
 import * as themeHook from 'hooks/useTheme'
-import * as gitContext from 'context/GitContext/useGitContext'
+import * as gitContext from 'hooks/useGitContext/useGitContext'
 import { expect } from 'vitest'
 
 describe('BranchTag', () => {

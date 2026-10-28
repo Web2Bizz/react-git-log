@@ -1,4 +1,4 @@
-import * as gitContext from 'context/GitContext'
+import * as gitContext from 'hooks/useGitContext/useGitContext'
 import { commit, gitContextBag, graphData } from 'test/stubs'
 import { Tags } from './Tags'
 import { render } from '@testing-library/react'

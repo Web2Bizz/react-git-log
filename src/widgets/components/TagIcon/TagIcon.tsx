@@ -2,7 +2,7 @@ import Icon from 'assets/tag.svg?react'
 import { useTheme } from 'hooks/useTheme'
 import styles from './TagIcon.module.scss'
 import classNames from 'classnames'
-import { TagIconProps } from './types'
+import { TagIconProps } from 'types/TagIcon'
 
 export const TagIcon = ({ className }: TagIconProps) => {
   const { textColour } = useTheme()

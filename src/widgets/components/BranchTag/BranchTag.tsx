@@ -5,9 +5,9 @@ import { CSSProperties, useCallback, useMemo, useState } from 'react'
 import { useTheme } from 'hooks/useTheme'
 import { BranchLabel } from '../BranchLabel'
 import { TagLabel } from '../TagLabel'
-import { IndexLabel } from 'modules/Tags/components/IndexLabel'
-import { BranchTagProps } from './types'
-import { useGitContext } from 'context/GitContext'
+import { IndexLabel } from 'components/IndexLabel'
+import { BranchTagProps } from 'types/BranchTag'
+import { useGitContext } from 'hooks/useGitContext'
 
 export const BranchTag = ({ id, commit, height, lineRight, lineWidth }: BranchTagProps) => {
   const { textColour, shiftAlphaChannel, getCommitColour } = useTheme()

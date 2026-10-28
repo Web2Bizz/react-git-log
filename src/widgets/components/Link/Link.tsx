@@ -1,7 +1,7 @@
 import classNames from 'classnames'
 import styles from './Link.module.scss'
 import { useTheme } from 'hooks/useTheme'
-import { LinkProps } from './types'
+import { LinkProps } from 'types/Link'
 
 export const Link = ({ href, text, className, ...props }: LinkProps) => {
   const { textColour } = useTheme()

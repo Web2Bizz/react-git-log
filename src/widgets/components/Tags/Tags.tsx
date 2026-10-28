@@ -1,6 +1,6 @@
 import styles from './Tags.module.scss'
-import { BranchTag } from './components/BranchTag'
-import { useGitContext } from 'context/GitContext'
+import { BranchTag } from 'components/BranchTag'
+import { useGitContext } from 'hooks/useGitContext'
 import { useCallback, useMemo } from 'react'
 import { ROW_HEIGHT } from 'constants/constants'
 import { Commit } from 'types/Commit'
