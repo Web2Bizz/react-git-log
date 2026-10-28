@@ -1,9 +1,9 @@
 import { CommitNodeLocation, GraphEdge } from 'data'
 import { Commit } from 'types/Commit'
-import { GraphMatrixBuilderProps, GraphBreakPointCheck } from './types'
-import { GraphEdgeRenderer } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphEdgeRenderer'
-import { GraphMatrix } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
-import { VirtualEdgeRenderer } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/VirtualEdgeRenderer'
+import { GraphMatrixBuilderProps, GraphBreakPointCheck } from 'types/GraphMatrixBuilder'
+import { GraphEdgeRenderer } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/GraphEdgeRenderer'
+import { GraphMatrix } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
+import { VirtualEdgeRenderer } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/VirtualEdgeRenderer'
 
 export class GraphMatrixBuilder {
   // Maps the one-based row index to an array of column state data

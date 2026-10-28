@@ -1,6 +1,6 @@
-import { GraphMatrixColumns } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrixColumns'
-import { GraphBreakPointCheck } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/types'
-import { GraphMatrix } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
+import { GraphMatrixColumns } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrixColumns'
+import { GraphBreakPointCheck } from 'types/GraphMatrixBuilder'
+import { GraphMatrix } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
 
 type BranchingEdgeRendererProps = {
   /**

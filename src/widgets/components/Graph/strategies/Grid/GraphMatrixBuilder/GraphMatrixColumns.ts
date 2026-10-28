@@ -1,5 +1,5 @@
-import { GraphColumnState } from 'modules/Graph/strategies/Grid/components/GraphColumn'
-import { getEmptyColumnState } from 'modules/Graph/strategies/Grid/utility/getEmptyColumnState'
+import { GraphColumnState } from 'components/GraphColumn'
+import { getEmptyColumnState } from 'utils/getEmptyColumnState'
 
 export class GraphMatrixColumns {
   private readonly _columns: GraphColumnState[]

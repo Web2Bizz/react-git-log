@@ -1,12 +1,12 @@
 import { PropsWithChildren, useEffect, useMemo } from 'react'
 import styles from './GraphCore.module.scss'
-import { useGitContext } from 'context/GitContext'
-import { useColumnData } from 'modules/Graph/strategies/Grid/hooks/useColumnData'
+import { useGitContext } from 'hooks/useGitContext'
+import { useColumnData } from 'hooks/useColumnData'
 import { useResize } from 'hooks/useResize'
 import { DEFAULT_NODE_SIZE } from 'constants/constants'
-import { GraphContext, GraphContextBag } from '../context'
-import { GraphCoreProps } from 'modules/Graph/core/types'
-import { CustomCommitNode } from 'modules/Graph'
+import { GraphContext, GraphContextBag } from 'context/GraphContext'
+import { GraphCoreProps } from 'types/GraphCore'
+import { CustomCommitNode } from 'components/Graph'
 
 export const GraphCore = <T,>({
   node,

@@ -1,14 +1,14 @@
-import styles from 'modules/Graph/core/GraphCore.module.scss'
+import styles from 'components/Graph/core/GraphCore.module.scss'
 import { ROW_HEIGHT } from 'constants/constants'
-import { SkeletonGraph } from 'modules/Graph/strategies/Grid/components/SkeletonGraph'
-import { IndexPseudoRow } from 'modules/Graph/strategies/Grid/components/IndexPseudoRow'
-import { GraphRow } from 'modules/Graph/strategies/Grid/components/GraphRow'
-import { useGraphContext } from 'modules/Graph/context'
-import { useGitContext } from 'context/GitContext'
-import { getEmptyColumnState } from 'modules/Graph/strategies/Grid/utility/getEmptyColumnState'
+import { SkeletonGraph } from 'components/SkeletonGraph'
+import { IndexPseudoRow } from 'components/IndexPseudoRow'
+import { GraphRow } from 'components/GraphRow'
+import { useGraphContext } from 'hooks/useGraphContext'
+import { useGitContext } from 'hooks/useGitContext'
+import { getEmptyColumnState } from 'utils/getEmptyColumnState'
 import { CSSProperties, useMemo } from 'react'
-import { placeholderCommits } from 'modules/Graph/strategies/Grid/hooks/usePlaceholderData/data'
-import { GRAPH_MARGIN_TOP } from 'modules/Graph/constants'
+import { placeholderCommits } from 'hooks/usePlaceholderData/data'
+import { GRAPH_MARGIN_TOP } from 'components/Graph/constants'
 
 export const HTMLGridGraph = () => {
   const { graphWidth, visibleCommits, columnData } = useGraphContext()

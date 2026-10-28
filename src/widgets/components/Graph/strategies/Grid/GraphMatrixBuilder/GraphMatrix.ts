@@ -1,5 +1,5 @@
-import { isColumnEmpty } from 'modules/Graph/strategies/Grid/utility/isColumnEmpty'
-import { GraphMatrixColumns } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrixColumns'
+import { isColumnEmpty } from 'utils/isColumnEmpty'
+import { GraphMatrixColumns } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrixColumns'
 
 export class GraphMatrix {
   private readonly _matrix = new Map<number, GraphMatrixColumns>

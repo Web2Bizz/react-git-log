@@ -1,8 +1,8 @@
-import { isColumnEmpty } from 'modules/Graph/strategies/Grid/utility/isColumnEmpty'
+import { isColumnEmpty } from 'utils/isColumnEmpty'
 import { Commit } from 'types/Commit'
 import { CommitNodeLocation } from 'data'
-import { GraphMatrix } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
-import { GraphMatrixColumns } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrixColumns'
+import { GraphMatrix } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
+import { GraphMatrixColumns } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrixColumns'
 
 export type VirtualEdgeRendererProps = {
   matrix: GraphMatrix

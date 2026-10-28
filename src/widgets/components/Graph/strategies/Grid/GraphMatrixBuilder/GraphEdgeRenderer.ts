@@ -1,7 +1,7 @@
 import { CommitNodeLocation } from 'data'
-import { GraphMatrix } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
-import { GraphBreakPointCheck } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/types'
-import { BranchingEdgeRenderer } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder/BranchingEdgeRenderer'
+import { GraphMatrix } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
+import { GraphBreakPointCheck } from 'types/GraphMatrixBuilder'
+import { BranchingEdgeRenderer } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/BranchingEdgeRenderer'
 
 export class GraphEdgeRenderer {
   private readonly _matrix: GraphMatrix
