@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest'
 import { renderHook } from '@testing-library/react'
 import { useTheme } from './useTheme'
-import * as gitContext from 'context/GitContext/useGitContext'
-import * as themeContext from 'context/ThemeContext/useThemeContext'
+import * as gitContext from 'hooks/useGitContext/useGitContext'
+import * as themeContext from 'hooks/useThemeContext/useThemeContext'
 import { gitContextBag, graphData, themeContextBag } from 'test/stubs'
 import { Commit } from 'types/Commit'
 

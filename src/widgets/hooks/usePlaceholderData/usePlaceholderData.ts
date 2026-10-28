@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import { columns, placeholderCommits } from './data'
-import { PlaceholderData } from './types'
+import { PlaceholderData } from 'types/usePlaceholderData'
 
 export const usePlaceholderData = (): PlaceholderData => {
   const placeholderData = useMemo(() => {

@@ -1,7 +1,7 @@
 import { useMemo } from 'react'
-import { useGitContext } from 'context/GitContext'
-import { GraphColumnData, GraphColumnDataProps } from './types'
-import { GraphMatrixBuilder } from 'modules/Graph/strategies/Grid/GraphMatrixBuilder'
+import { useGitContext } from 'hooks/useGitContext'
+import { GraphColumnData, GraphColumnDataProps } from 'types/useColumnData'
+import { GraphMatrixBuilder } from 'components/Graph/strategies/Grid/GraphMatrixBuilder'
 
 export const useColumnData = ({ visibleCommits }: GraphColumnDataProps): GraphColumnData => {
   const {

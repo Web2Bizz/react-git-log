@@ -1,8 +1,8 @@
-import { useGitContext } from 'context/GitContext'
-import { GetCommitNodeColoursArgs, ThemeFunctions } from './types'
+import { useGitContext } from 'hooks/useGitContext'
+import { GetCommitNodeColoursArgs, ThemeFunctions } from 'types/useTheme'
 import { useCallback, useMemo } from 'react'
 import { Commit } from 'types/Commit'
-import { useThemeContext } from 'context/ThemeContext'
+import { useThemeContext } from 'hooks/useThemeContext'
 
 export const useTheme = (): ThemeFunctions => {
   const { graphData } = useGitContext()

@@ -1,5 +1,5 @@
 import { Commit } from 'types/Commit'
-import { GraphColumnState } from 'modules/Graph/strategies/Grid/components/GraphColumn'
+import { GraphColumnState } from 'components/GraphColumn'
 
 export const placeholderCommits: Commit[] = [
   {

@@ -1,7 +1,7 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import { act, renderHook } from '@testing-library/react'
 import { useResize } from './useResize'
-import * as GitContext from 'context/GitContext'
+import * as GitContext from 'hooks/useGitContext/useGitContext'
 import * as MouseHook from '@uidotdev/usehooks'
 import { gitContextBag } from 'test/stubs'
 
