@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 import styles from './Layout.module.scss'
-import { useGitContext } from 'context/GitContext'
+import { useGitContext } from 'hooks/useGitContext'
 import { useTheme } from 'hooks/useTheme'
-import { LayoutProps } from './types'
+import { LayoutProps } from 'types/Layout'
 
 export const Layout = ({ tags, graph, table }: LayoutProps) => {
   const { classes, showHeaders } = useGitContext()

@@ -1,9 +1,9 @@
-import { GitLogProps } from './types'
+import { GitLogProps } from 'types/GitLog'
 import { PropsWithChildren } from 'react'
-import { Tags } from './modules/Tags'
-import { GraphHTMLGrid } from './modules/Graph'
-import { Table } from './modules/Table'
-import { GitLogCore } from './components/GitLogCore'
+import { Tags } from '../Tags'
+import { GraphHTMLGrid } from '../Graph'
+import { Table } from '../Table'
+import { GitLogCore } from '../GitLogCore'
 
 export const GitLog = <T = unknown>({ children, ...props }: PropsWithChildren<GitLogProps<T>>) => {
   return (
