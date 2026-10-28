@@ -1,4 +1,4 @@
-import { getMergeNodeInnerSize } from 'modules/Graph/utils/getMergeNodeInnerSize'
+import { getMergeNodeInnerSize } from 'utils/getMergeNodeInnerSize'
 
 describe('getMergeNodeInnerSize', () => {
   it('should return the correct diameter for a nodeSize greater than 10', () => {

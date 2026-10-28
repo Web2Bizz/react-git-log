@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { isColumnEmpty } from './isColumnEmpty'
-import { GraphColumnState } from 'modules/Graph/strategies/Grid/components/GraphColumn'
+import { GraphColumnState } from 'components/GraphColumn'
 
 describe('isColumnEmpty', () => {
   it('returns true when all non-ignored values are falsy', () => {
