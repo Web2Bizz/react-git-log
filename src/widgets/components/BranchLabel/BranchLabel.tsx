@@ -3,7 +3,7 @@ import styles from './BranchLabel.module.scss'
 import { formatBranch } from 'utils/formatBranch'
 import { useMemo } from 'react'
 import { Link } from '../Link'
-import { BranchIcon } from '../BranchIcon'
+import { BranchIcon } from 'components/Icons'
 import { BranchLabelProps } from 'types/BranchLabel'
 
 export const BranchLabel = ({ commit }: BranchLabelProps) => {

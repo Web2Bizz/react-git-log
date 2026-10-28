@@ -54,7 +54,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-0"
             id="tag-line-0"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -99,7 +99,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-1"
             id="tag-line-1"
-            style="opacity: 0.4; right: -36px; width: 36px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -46px; width: 46px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -144,7 +144,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-2"
             id="tag-line-2"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -189,7 +189,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-3"
             id="tag-line-3"
-            style="opacity: 0.4; right: -84px; width: 84px; border-top: 2px dotted rgb(0, 255, 146); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -94px; width: 94px; border-top: 2px dotted rgb(0, 255, 146); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -234,7 +234,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-4"
             id="tag-line-4"
-            style="opacity: 0.4; right: -108px; width: 108px; border-top: 2px dotted rgb(0, 146, 255); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -118px; width: 118px; border-top: 2px dotted rgb(0, 146, 255); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -279,7 +279,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-5"
             id="tag-line-5"
-            style="opacity: 0.4; right: -132px; width: 132px; border-top: 2px dotted rgb(73, 0, 255); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -142px; width: 142px; border-top: 2px dotted rgb(73, 0, 255); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -324,7 +324,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-6"
             id="tag-line-6"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 219); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 219); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -513,7 +513,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-31"
             id="tag-line-31"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -637,7 +637,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-44"
             id="tag-line-44"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -761,7 +761,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-57"
             id="tag-line-57"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -915,7 +915,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-75"
             id="tag-line-75"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -1261,7 +1261,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-125"
             id="tag-line-125"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -1397,7 +1397,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-140"
             id="tag-line-140"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -1671,7 +1671,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-178"
             id="tag-line-178"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -1927,7 +1927,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-213"
             id="tag-line-213"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -2477,7 +2477,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-297"
             id="tag-line-297"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -2649,7 +2649,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-318"
             id="tag-line-318"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -2851,7 +2851,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-344"
             id="tag-line-344"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -3077,7 +3077,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-374"
             id="tag-line-374"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -62690,7 +62690,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-0"
             id="tag-line-0"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -62735,7 +62735,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-1"
             id="tag-line-1"
-            style="opacity: 0.4; right: -132px; width: 132px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -142px; width: 142px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -62780,7 +62780,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-2"
             id="tag-line-2"
-            style="opacity: 0.4; right: -108px; width: 108px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -118px; width: 118px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -62825,7 +62825,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-3"
             id="tag-line-3"
-            style="opacity: 0.4; right: -84px; width: 84px; border-top: 2px dotted rgb(0, 255, 146); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -94px; width: 94px; border-top: 2px dotted rgb(0, 255, 146); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -62870,7 +62870,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-4"
             id="tag-line-4"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(0, 146, 255); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(0, 146, 255); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -62915,7 +62915,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-5"
             id="tag-line-5"
-            style="opacity: 0.4; right: -36px; width: 36px; border-top: 2px dotted rgb(73, 0, 255); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -46px; width: 46px; border-top: 2px dotted rgb(73, 0, 255); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -62960,7 +62960,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-6"
             id="tag-line-6"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 219); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 219); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -63149,7 +63149,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-31"
             id="tag-line-31"
-            style="opacity: 0.4; right: -108px; width: 108px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -118px; width: 118px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -63273,7 +63273,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-44"
             id="tag-line-44"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -63397,7 +63397,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-57"
             id="tag-line-57"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -63551,7 +63551,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-75"
             id="tag-line-75"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -63897,7 +63897,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-125"
             id="tag-line-125"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -64033,7 +64033,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-140"
             id="tag-line-140"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -64307,7 +64307,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-178"
             id="tag-line-178"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -64563,7 +64563,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-213"
             id="tag-line-213"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -65113,7 +65113,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-297"
             id="tag-line-297"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -65285,7 +65285,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-318"
             id="tag-line-318"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -65487,7 +65487,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-344"
             id="tag-line-344"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -65713,7 +65713,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-374"
             id="tag-line-374"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -125194,7 +125194,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-0"
             id="tag-line-0"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -125235,7 +125235,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-1"
             id="tag-line-1"
-            style="opacity: 0.4; right: -36px; width: 36px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -46px; width: 46px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -125276,7 +125276,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-2"
             id="tag-line-2"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -125317,7 +125317,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-3"
             id="tag-line-3"
-            style="opacity: 0.4; right: -132px; width: 132px; border-top: 2px dotted rgb(73, 0, 255); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -142px; width: 142px; border-top: 2px dotted rgb(73, 0, 255); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -125358,7 +125358,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-4"
             id="tag-line-4"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 219); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 219); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -125405,7 +125405,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-6"
             id="tag-line-6"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -125453,7 +125453,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-7"
             id="tag-line-7"
-            style="opacity: 0.4; right: -36px; width: 36px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -46px; width: 46px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -125519,7 +125519,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-11"
             id="tag-line-11"
-            style="opacity: 0.4; right: -36px; width: 36px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -46px; width: 46px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -125627,7 +125627,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-22"
             id="tag-line-22"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -125675,7 +125675,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-23"
             id="tag-line-23"
-            style="opacity: 0.4; right: -36px; width: 36px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -46px; width: 46px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -125723,7 +125723,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-24"
             id="tag-line-24"
-            style="opacity: 0.4; right: -36px; width: 36px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -46px; width: 46px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -125771,7 +125771,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-25"
             id="tag-line-25"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -125825,7 +125825,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-27"
             id="tag-line-27"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -125873,7 +125873,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-28"
             id="tag-line-28"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -125921,7 +125921,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-29"
             id="tag-line-29"
-            style="opacity: 0.4; right: -36px; width: 36px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -46px; width: 46px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
           />
         </button>
       </div>
@@ -130117,7 +130117,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-0"
             id="tag-line-0"
-            style="opacity: 0.4; right: -36px; width: 36px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -46px; width: 46px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -130162,7 +130162,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-1"
             id="tag-line-1"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -130207,7 +130207,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-2"
             id="tag-line-2"
-            style="opacity: 0.4; right: -84px; width: 84px; border-top: 2px dotted rgb(0, 255, 146); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -94px; width: 94px; border-top: 2px dotted rgb(0, 255, 146); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -130252,7 +130252,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-3"
             id="tag-line-3"
-            style="opacity: 0.4; right: -108px; width: 108px; border-top: 2px dotted rgb(0, 146, 255); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -118px; width: 118px; border-top: 2px dotted rgb(0, 146, 255); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -130297,7 +130297,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-4"
             id="tag-line-4"
-            style="opacity: 0.4; right: -132px; width: 132px; border-top: 2px dotted rgb(73, 0, 255); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -142px; width: 142px; border-top: 2px dotted rgb(73, 0, 255); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -130342,7 +130342,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-5"
             id="tag-line-5"
-            style="opacity: 0.4; right: -156px; width: 156px; border-top: 2px dotted rgb(255, 0, 219); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -166px; width: 166px; border-top: 2px dotted rgb(255, 0, 219); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -130531,7 +130531,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-30"
             id="tag-line-30"
-            style="opacity: 0.4; right: -60px; width: 60px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -70px; width: 70px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -130655,7 +130655,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-43"
             id="tag-line-43"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -130779,7 +130779,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-56"
             id="tag-line-56"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -130933,7 +130933,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-74"
             id="tag-line-74"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -131279,7 +131279,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-124"
             id="tag-line-124"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -131415,7 +131415,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-139"
             id="tag-line-139"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -131689,7 +131689,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-177"
             id="tag-line-177"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -131945,7 +131945,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-212"
             id="tag-line-212"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -132495,7 +132495,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-296"
             id="tag-line-296"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -132667,7 +132667,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-317"
             id="tag-line-317"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -132869,7 +132869,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-343"
             id="tag-line-343"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -133095,7 +133095,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-373"
             id="tag-line-373"
-            style="opacity: 0.4; right: -12px; width: 12px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -22px; width: 22px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -193017,7 +193017,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-0"
             id="tag-line-0"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -193062,7 +193062,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-1"
             id="tag-line-1"
-            style="opacity: 0.4; right: -24px; width: 24px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -34px; width: 34px; border-top: 2px dotted rgb(255, 219, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -193107,7 +193107,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-2"
             id="tag-line-2"
-            style="opacity: 0.4; right: -40px; width: 40px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -50px; width: 50px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -193152,7 +193152,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-3"
             id="tag-line-3"
-            style="opacity: 0.4; right: -56px; width: 56px; border-top: 2px dotted rgb(0, 255, 146); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -66px; width: 66px; border-top: 2px dotted rgb(0, 255, 146); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -193197,7 +193197,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-4"
             id="tag-line-4"
-            style="opacity: 0.4; right: -72px; width: 72px; border-top: 2px dotted rgb(0, 146, 255); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -82px; width: 82px; border-top: 2px dotted rgb(0, 146, 255); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -193242,7 +193242,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-5"
             id="tag-line-5"
-            style="opacity: 0.4; right: -88px; width: 88px; border-top: 2px dotted rgb(73, 0, 255); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -98px; width: 98px; border-top: 2px dotted rgb(73, 0, 255); animation-duration: 0.3s;"
           />
         </button>
         <button
@@ -193287,7 +193287,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-6"
             id="tag-line-6"
-            style="opacity: 0.4; right: -104px; width: 104px; border-top: 2px dotted rgb(255, 0, 219); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -114px; width: 114px; border-top: 2px dotted rgb(255, 0, 219); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -193476,7 +193476,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-31"
             id="tag-line-31"
-            style="opacity: 0.4; right: -40px; width: 40px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -50px; width: 50px; border-top: 2px dotted rgb(73, 255, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -193600,7 +193600,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-44"
             id="tag-line-44"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -193724,7 +193724,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-57"
             id="tag-line-57"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -193878,7 +193878,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-75"
             id="tag-line-75"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -194224,7 +194224,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-125"
             id="tag-line-125"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -194360,7 +194360,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-140"
             id="tag-line-140"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -194634,7 +194634,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-178"
             id="tag-line-178"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -194890,7 +194890,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-213"
             id="tag-line-213"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -195440,7 +195440,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-297"
             id="tag-line-297"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -195612,7 +195612,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-318"
             id="tag-line-318"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -195814,7 +195814,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-344"
             id="tag-line-344"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div
@@ -196040,7 +196040,7 @@ exports[`GitLog > HTML Grid Graph > should render correctly and match the snapsh
             class="tagLine"
             data-testid="tag-line-374"
             id="tag-line-374"
-            style="opacity: 0.4; right: -8px; width: 8px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
+            style="opacity: 0.4; right: -18px; width: 18px; border-top: 2px dotted rgb(255, 0, 0); animation-duration: 0.3s;"
           />
         </button>
         <div

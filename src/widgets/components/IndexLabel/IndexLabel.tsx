@@ -1,5 +1,5 @@
 import styles from './IndexLabel.module.scss'
-import { GitIcon } from 'components/GitIcon'
+import { GitIcon } from 'components/Icons'
 
 export const IndexLabel = () => {
   return (
