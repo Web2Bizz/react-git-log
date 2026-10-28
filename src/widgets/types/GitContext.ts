@@ -1,7 +1,7 @@
 import { Commit } from 'types/Commit'
-import { GraphData } from 'data'
-import { CommitFilter, GitLogIndexStatus, GitLogStylingProps, GitLogUrlBuilder } from '../../types'
-import { GraphOrientation } from 'modules/Graph'
+import { GraphData } from 'types/GraphData'
+import { CommitFilter, GitLogIndexStatus, GitLogStylingProps, GitLogUrlBuilder } from 'types/GitLog'
+import { GraphOrientation } from 'types/Graph'
 
 export type GitContextBag<T = unknown> = {
   /**

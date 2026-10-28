@@ -1,3 +1,3 @@
-import { HTMLGridGraphProps } from 'modules/Graph'
+import { HTMLGridGraphProps } from 'types/Graph'
 
 export type GraphCoreProps<T> = HTMLGridGraphProps<T>

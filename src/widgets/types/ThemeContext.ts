@@ -1,4 +1,4 @@
-import { ThemeColours, ThemeMode } from 'hooks/useTheme'
+import { ThemeColours, ThemeMode } from 'types/useTheme'
 
 export type ThemeContextBag = {
   /**

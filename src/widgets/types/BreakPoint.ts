@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react'
-import { BreakPointTheme } from 'hooks/useTheme'
+import { BreakPointTheme } from 'types/useTheme'
 
 export type BreakPointProps = {
   position: BreakPointPosition

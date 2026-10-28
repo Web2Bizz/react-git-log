@@ -1,5 +1,5 @@
 import { CSSProperties } from 'react'
-import { CustomTableRow } from 'modules/Table'
+import { CustomTableRow } from 'types/Table'
 
 export type TableContainerProps = {
   rowQuantity: number

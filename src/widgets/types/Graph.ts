@@ -1,7 +1,7 @@
-import { BreakPointTheme, NodeTheme } from '../../hooks/useTheme'
-import { CustomCommitNode } from './strategies/Grid/types'
+import { BreakPointTheme, NodeTheme } from 'types/useTheme'
+import { CustomCommitNode } from 'types/Grid'
 import { ReactElement } from 'react'
-import { Commit } from '../../types/Commit'
+import { Commit } from 'types/Commit'
 
 /**
  * The orientation of the graph.

@@ -1,8 +1,8 @@
-import { BreakPointTheme, NodeTheme } from 'hooks/useTheme'
-import { CustomTooltip, GraphOrientation } from 'modules/Graph'
+import { BreakPointTheme, NodeTheme } from 'types/useTheme'
+import { CustomTooltip, GraphOrientation } from 'types/Graph'
 import { Commit } from 'types/Commit'
-import { RowIndexToColumnStates } from 'modules/Graph/strategies/Grid/hooks/useColumnData'
-import { CustomCommitNode } from 'modules/Graph/strategies/Grid'
+import { RowIndexToColumnStates } from 'types/useColumnData'
+import { CustomCommitNode } from 'types/Grid'
 
 export type GraphContextBag = {
   /**

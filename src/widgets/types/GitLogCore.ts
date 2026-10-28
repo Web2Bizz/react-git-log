@@ -1,4 +1,4 @@
-import { GitLogPagedProps, GitLogProps } from '../../types'
+import { GitLogPagedProps, GitLogProps } from 'types/GitLog'
 
 export type GitLogCoreProps<T> = GitLogProps<T> & Omit<GitLogPagedProps<T>, 'headCommitHash' | 'branchName'> & {
   componentName: string

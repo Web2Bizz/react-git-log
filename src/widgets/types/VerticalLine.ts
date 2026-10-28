@@ -1,4 +1,4 @@
-import { GraphColumnState } from 'modules/Graph/strategies/Grid/components/GraphColumn'
+import { GraphColumnState } from 'types/GraphColumn'
 import { Commit } from 'types/Commit'
 
 export type VerticalLineProps = {

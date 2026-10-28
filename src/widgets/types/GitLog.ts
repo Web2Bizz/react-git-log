@@ -1,7 +1,7 @@
 import { CSSProperties } from 'react'
-import { ThemeColours, ThemeMode } from './hooks/useTheme/types'
-import { GitLogEntry } from './types/GitLogEntry'
-import { Commit } from './types/Commit'
+import { ThemeColours, ThemeMode } from 'types/useTheme'
+import { GitLogEntry } from 'types/GitLogEntry'
+import { Commit } from 'types/Commit'
 
 type GitLogCommonProps<T> = {
   /**

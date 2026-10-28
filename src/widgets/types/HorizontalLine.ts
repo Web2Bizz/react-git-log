@@ -1,4 +1,4 @@
-import { GraphColumnState } from 'modules/Graph/strategies/Grid/components/GraphColumn'
+import { GraphColumnState } from 'types/GraphColumn'
 
 export type HorizontalLineProps = {
   columnIndex: number

@@ -1,4 +1,4 @@
-import { CommitAuthor } from './Commit'
+import { CommitAuthor } from 'types/Commit'
 
 export type GitLogEntryBase = {
   /**
