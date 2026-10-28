@@ -1,10 +1,12 @@
+import { INDEX_HASH } from 'constants/constants'
+
 export class ActiveBranches {
   /**
    * Tracks the commit hashes that are active
    * at any one time. The index in the array
    * is the position (like the column in the graph).
    */
-  private branches: (string | null)[] = ['index']
+  private branches: (string | null)[] = [INDEX_HASH]
 
   /**
    * Adds a commit hash to the active branches.

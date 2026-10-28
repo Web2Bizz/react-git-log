@@ -12,6 +12,7 @@ import { VerticalLine } from 'components/VerticalLine'
 import { HeadCommitVerticalLine } from 'components/HeadCommitVerticalLine'
 import { IndexPseudoCommitNode } from 'components/IndexPseudoCommitNode'
 import { useGraphContext } from 'hooks/useGraphContext'
+import { INDEX_HASH, INDEX_NODE_BORDER_OPACITY, PREVIEW_TAG_OPACITY } from 'constants/constants'
 
 export const GraphColumn = ({
   index,
@@ -33,11 +34,11 @@ export const GraphColumn = ({
   } = useGitContext()
 
   const columnColour = state.isPlaceholderSkeleton
-    ? shiftAlphaChannel(textColour, 0.8)
+    ? shiftAlphaChannel(textColour, PREVIEW_TAG_OPACITY)
     : getGraphColumnColour(index)
 
-  const isRowCommitIndexNode = commit.hash === 'index'
-  const indexCommitNodeBorder = shiftAlphaChannel(columnColour, 0.5)
+  const isRowCommitIndexNode = commit.hash === INDEX_HASH
+  const indexCommitNodeBorder = shiftAlphaChannel(columnColour, INDEX_NODE_BORDER_OPACITY)
   const rowsCommitMatchesPreviewed = previewedCommit?.hash === commit.hash
   const rowsCommitMatchesSelected = selectedCommit?.hash === commit.hash
   const rowsCommitIsHead = commit.hash === headCommit?.hash && state.isNode
@@ -87,7 +88,7 @@ export const GraphColumn = ({
     rowIndex,
     columnIndex: index,
     isIndexPseudoNode: isRowCommitIndexNode,
-    colour: isRowCommitIndexNode ? shiftAlphaChannel(columnColour, 0.5) : columnColour,
+    colour: isRowCommitIndexNode ? shiftAlphaChannel(columnColour, INDEX_NODE_BORDER_OPACITY) : columnColour,
   })
 
   const handleMouseOut = () => {

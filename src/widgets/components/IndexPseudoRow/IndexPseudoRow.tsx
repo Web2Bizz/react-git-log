@@ -3,6 +3,7 @@ import { GraphColumnState } from 'components/GraphColumn'
 import { useMemo } from 'react'
 import { useGitContext } from 'hooks/useGitContext'
 import { useGraphContext } from 'hooks/useGraphContext'
+import { INDEX_HASH } from 'constants/constants'
 
 export const IndexPseudoRow = () => {
   const { indexCommit } = useGitContext()
@@ -24,7 +25,7 @@ export const IndexPseudoRow = () => {
     return (
       <GraphRow
         id={0}
-        key={'index'}
+        key={INDEX_HASH}
         commit={indexCommit}
         columns={indexColumns}
       />

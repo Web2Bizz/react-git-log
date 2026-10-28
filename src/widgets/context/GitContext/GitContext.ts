@@ -1,11 +1,10 @@
 import { createContext } from 'react'
 import { GitContextBag } from 'types/GitContext'
 import { Commit } from 'types/Commit'
-import { DEFAULT_NODE_SIZE } from 'constants/constants'
-import { GraphOrientation } from 'components/Graph'
+import { DEFAULT_BRANCH_NAME, DEFAULT_COMMIT_HASH, DEFAULT_NODE_SIZE } from 'constants/constants'
 
 const defaultCommit: Commit = {
-  hash: 'defaultCommit',
+  hash: DEFAULT_COMMIT_HASH,
   branch: 'unknown',
   parents: [],
   children: [],
@@ -15,24 +14,22 @@ const defaultCommit: Commit = {
   isBranchTip: false
 }
 
+const uninitialised = () => {
+  // No-op: context used before provider initialisation.
+}
+
 export const GitContext = createContext<GitContextBag>({
   headCommit: defaultCommit,
   indexCommit: defaultCommit,
-  currentBranch: 'master',
+  currentBranch: DEFAULT_BRANCH_NAME,
   showTable: true,
   showBranchesTags: true,
   selectedCommit: undefined,
-  setSelectedCommit: (commit?: Commit) => {
-    console.debug(`Tried to invoke setSelectedCommit(${JSON.stringify(commit)}) before the GitContext was initialised.`)
-  },
+  setSelectedCommit: uninitialised,
   previewedCommit: undefined,
-  setPreviewedCommit: (commit?: Commit) => {
-    console.debug(`Tried to invoke setPreviewedCommit(${JSON.stringify(commit)}) before the GitContext was initialised.`)
-  },
+  setPreviewedCommit: uninitialised,
   graphOrientation: 'normal',
-  setGraphOrientation: (orientation: GraphOrientation) => {
-    console.debug(`Tried to invoke setGraphOrientation(${orientation}) before the GitContext was initialised.`)
-  },
+  setGraphOrientation: uninitialised,
   graphData: {
     children: new Map(),
     edges: [],
@@ -45,12 +42,8 @@ export const GitContext = createContext<GitContextBag>({
   rowSpacing: 0,
   graphWidth: 300,
   nodeSize: DEFAULT_NODE_SIZE,
-  setNodeSize: (size: number) => {
-    console.debug(`Tried to invoke setNodeSize(${size}) before the GitContext was initialised.`)
-  },
-  setGraphWidth: (width: number) => {
-    console.debug(`Tried to invoke setGraphWidth(${width}) before the GitContext was initialised.`)
-  },
+  setNodeSize: uninitialised,
+  setGraphWidth: uninitialised,
   isServerSidePaginated: false,
   paging: {
     endIndex: 0,

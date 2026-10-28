@@ -75,4 +75,4 @@ export type CommitAuthor = {
 /**
  * Represents a commit in the Git history.
  */
-export type Commit<T = object> = CommitBase & T
+export type Commit<T = unknown> = CommitBase & T

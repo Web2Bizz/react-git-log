@@ -8,6 +8,7 @@ import { TagLabel } from '../TagLabel'
 import { IndexLabel } from 'components/IndexLabel'
 import { BranchTagProps } from 'types/BranchTag'
 import { useGitContext } from 'hooks/useGitContext'
+import { DEFAULT_TAG_OPACITY, INDEX_HASH, INDEX_NODE_BORDER_OPACITY, PREVIEW_TAG_OPACITY } from 'constants/constants'
 
 export const BranchTag = ({ id, commit, height, lineRight, lineWidth }: BranchTagProps) => {
   const { textColour, shiftAlphaChannel, getCommitColour } = useTheme()
@@ -29,7 +30,7 @@ export const BranchTag = ({ id, commit, height, lineRight, lineWidth }: BranchTa
     const isPreviewCommit = commit.hash === previewedCommit?.hash && enablePreviewedCommitStyling
     const isSelectedCommit = commit.hash === selectedCommit?.hash && enableSelectedCommitStyling
 
-    const previewOrDefaultOpacity = isPreviewCommit ? 0.8 : 0.4
+    const previewOrDefaultOpacity = isPreviewCommit ? PREVIEW_TAG_OPACITY : DEFAULT_TAG_OPACITY
     const opacity: number = isSelectedCommit ? 1 : previewOrDefaultOpacity
     
     return {
@@ -42,10 +43,10 @@ export const BranchTag = ({ id, commit, height, lineRight, lineWidth }: BranchTa
   }, [colour, commit.hash, enablePreviewedCommitStyling, enableSelectedCommitStyling, lineRight, lineWidth, previewedCommit?.hash, selectedCommit?.hash])
 
   const tagLabelContainerStyles = useMemo<CSSProperties>(() => {
-    if (commit.hash === 'index') {
+    if (commit.hash === INDEX_HASH) {
       return {
         color: textColour,
-        border: `2px dashed ${shiftAlphaChannel(colour, 0.50)}`,
+        border: `2px dashed ${shiftAlphaChannel(colour, INDEX_NODE_BORDER_OPACITY)}`,
         background: shiftAlphaChannel(colour, 0.05)
       }
     }
@@ -58,7 +59,7 @@ export const BranchTag = ({ id, commit, height, lineRight, lineWidth }: BranchTa
   }, [colour, commit.hash, shiftAlphaChannel, textColour])
 
   const label = useMemo(() => {
-    if (commit.hash === 'index') {
+    if (commit.hash === INDEX_HASH) {
       return (
         <IndexLabel />
       )

@@ -1,17 +1,25 @@
 import FastPriorityQueue from 'fastpriorityqueue'
+import { INDEX_HASH } from 'constants/constants'
 
 export class ActiveNodes {
   private readonly activeNodes = new Map<string, Set<number>>()
   private readonly activeNodesQueue = new FastPriorityQueue<[number, string]>((lhs, rhs) => lhs[0] < rhs[0])
 
   constructor() {
-    this.activeNodes.set('index', new Set<number>())
+    this.activeNodes.set(INDEX_HASH, new Set<number>())
   }
 
   public removeOutdatedNodes(rowIndex: number) {
-    while (!this.activeNodesQueue.isEmpty() && this.activeNodesQueue.peek()![0] < rowIndex) {
-      const activeNodeHash = this.activeNodesQueue.poll()![1]
-      this.activeNodes.delete(activeNodeHash)
+    while (!this.activeNodesQueue.isEmpty()) {
+      const peeked = this.activeNodesQueue.peek()
+      if (peeked === undefined || peeked[0] >= rowIndex) {
+        break
+      }
+
+      const polled = this.activeNodesQueue.poll()
+      if (polled !== undefined) {
+        this.activeNodes.delete(polled[1])
+      }
     }
   }
 
@@ -32,6 +40,6 @@ export class ActiveNodes {
   }
 
   public get(hash: string) {
-    return this.activeNodes.get(hash)!
+    return this.activeNodes.get(hash)
   }
 }

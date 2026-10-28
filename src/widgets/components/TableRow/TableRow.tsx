@@ -4,7 +4,7 @@ import { cloneElement, CSSProperties, useMemo } from 'react'
 import { useTheme } from 'hooks/useTheme'
 import { useGitContext } from 'hooks/useGitContext'
 import { useSelectCommit } from 'hooks/useSelectCommit'
-import { BACKGROUND_HEIGHT_OFFSET, ROW_HEIGHT } from 'constants/constants'
+import { BACKGROUND_HEIGHT_OFFSET, DIMMED_TEXT_OPACITY, INDEX_HASH, ROW_HEIGHT, SELECTED_BG_OPACITY } from 'constants/constants'
 import { CommitMessageData } from 'components/CommitMessageData'
 import { AuthorData } from 'components/AuthorData'
 import { TimestampData } from 'components/TimestampData'
@@ -40,7 +40,7 @@ export const TableRow = ({
       }
 
       const colour = getCommitColour(commit)
-      return reduceOpacity(colour, 0.15)
+      return reduceOpacity(colour, SELECTED_BG_OPACITY)
     }
 
     if (isRowPreviewed && enablePreviewedCommitStyling) {
@@ -66,12 +66,12 @@ export const TableRow = ({
     }
   }, [backgroundColour, nodeSize])
 
-  const shouldRenderHyphenValue = commit.hash === 'index' || Boolean(isPlaceholder)
-  const shouldReduceOpacity = !isPlaceholder && (isMergeCommit || commit.hash === 'index')
+  const shouldRenderHyphenValue = commit.hash === INDEX_HASH || Boolean(isPlaceholder)
+  const shouldReduceOpacity = !isPlaceholder && (isMergeCommit || commit.hash === INDEX_HASH)
 
   const tableDataStyle: CSSProperties = {
     lineHeight: `${ROW_HEIGHT}px`,
-    color: shiftAlphaChannel(textColour, shouldReduceOpacity ? 0.4 : 1),
+    color: shiftAlphaChannel(textColour, shouldReduceOpacity ? DIMMED_TEXT_OPACITY : 1),
     ...backgroundStyles,
     ...dataStyleOverrides
   }
@@ -109,7 +109,7 @@ export const TableRow = ({
         index={index}
         style={tableDataStyle}
         commitMessage={commit.message}
-        isIndex={commit.hash === 'index'}
+        isIndex={commit.hash === INDEX_HASH}
       />
 
       <AuthorData

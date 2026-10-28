@@ -9,7 +9,7 @@ import { GraphHTMLGrid, GraphOrientation } from 'components/Graph'
 import { Table } from 'components/Table'
 import { Layout } from 'components/Layout'
 import { Commit } from 'types/Commit'
-import { DEFAULT_NODE_SIZE, NODE_BORDER_WIDTH } from 'constants/constants'
+import { DEFAULT_NODE_SIZE, INDEX_HASH, NODE_BORDER_WIDTH } from 'constants/constants'
 import { ThemeContextProvider } from 'context/ThemeContext'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
@@ -114,7 +114,7 @@ export const GitLogCore = <T,>({
     const today = dayjs.utc().toISOString()
 
     return {
-      hash: 'index',
+      hash: INDEX_HASH,
       branch: headCommit.branch,
       parents: [headCommit.hash],
       children: [],
@@ -122,7 +122,7 @@ export const GitLogCore = <T,>({
       message: '// WIP',
       committerDate: today,
       isBranchTip: false
-    } as Commit
+    }
   }, [headCommit])
 
   const pageIndices = useMemo(() => {

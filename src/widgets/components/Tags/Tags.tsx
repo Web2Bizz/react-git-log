@@ -4,6 +4,7 @@ import { useGitContext } from 'hooks/useGitContext'
 import { useCallback, useMemo } from 'react'
 import { ROW_HEIGHT } from 'constants/constants'
 import { Commit } from 'types/Commit'
+import { INDEX_HASH } from 'constants/constants'
 
 const prepareCommits = (commits: Commit[]) => {
   const tagsSeen = new Map<string, boolean>()
@@ -60,7 +61,7 @@ export const Tags = () => {
     // line to still reach the commit node in the graph.
     const paddingCompensation = 10
 
-    if (commit.hash === 'index') {
+    if (commit.hash === INDEX_HASH) {
       return (isNormalOrientation
         ? columnWidth / 2
         : ((numberOfColumns - 1) * columnWidth) + (columnWidth / 2)) + paddingCompensation

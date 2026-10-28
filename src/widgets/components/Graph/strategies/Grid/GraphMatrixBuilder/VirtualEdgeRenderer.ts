@@ -54,7 +54,11 @@ export class VirtualEdgeRenderer {
     // Or we may find they can draw straight down if there is free space below to the bottom.
     this._commitsWithUntrackedParents
       .filter(({ parents }) => parents.length > 1)
-      .sort((a, b) => this._positions.get(a.hash)![0] < this._positions.get(b.hash)![0] ? -1 : 1)
+      .sort((a, b) => {
+        const aRow = this._positions.get(a.hash)?.[0] ?? 0
+        const bRow = this._positions.get(b.hash)?.[0] ?? 0
+        return aRow < bRow ? -1 : 1
+      })
       .forEach(({ hash }) => {
         this.drawDownwardEdgesFromOrphanedMergeCommit(hash)
       })
@@ -67,7 +71,12 @@ export class VirtualEdgeRenderer {
       const isNotHeadCommit = commit.hash !== this._headCommitHash
       return hasNoChildren && isNotHeadCommit
     }).forEach(commitWithNoChildren => {
-      const [rowIndex, columnIndex] = this._positions.get(commitWithNoChildren.hash)!
+      const position = this._positions.get(commitWithNoChildren.hash)
+      if (!position) {
+        return
+      }
+
+      const [rowIndex, columnIndex] = position
       for (let targetRowIndex = rowIndex; targetRowIndex >= 1; targetRowIndex--) {
         const columnState = this._matrix.getColumns(targetRowIndex)
 
@@ -86,14 +95,19 @@ export class VirtualEdgeRenderer {
   }
 
   private drawDownwardEdgesFromOrphanedMergeCommit(orphanCommitHash: string) {
-    const [rowIndex, columnIndex] = this._positions.get(orphanCommitHash)!
+    const position = this._positions.get(orphanCommitHash)
+    if (!position) {
+      return
+    }
+
+    const [rowIndex, columnIndex] = position
     const columns = this._matrix.getColumns(rowIndex)
 
     // Can we just draw straight down in the current column?
     let columnsBelowContainNode = false
     let targetRowIndex = rowIndex + 1
     while(targetRowIndex <= this._visibleCommits) {
-      if (this._matrix.getColumns(targetRowIndex).columns[columnIndex].isNode) {
+      if (this._matrix.getColumns(targetRowIndex).columns[columnIndex]?.isNode) {
         columnsBelowContainNode = true
       }
       targetRowIndex++
@@ -147,7 +161,12 @@ export class VirtualEdgeRenderer {
   }
 
   private drawVerticalLineToBottom(fromCommitHash: string) {
-    const [rowIndex, columnIndex] = this._positions.get(fromCommitHash)!
+    const position = this._positions.get(fromCommitHash)
+    if (!position) {
+      return
+    }
+
+    const [rowIndex, columnIndex] = position
     for (let targetRowIndex = rowIndex; targetRowIndex <= this._visibleCommits; targetRowIndex++) {
       const columnState = this._matrix.getColumns(targetRowIndex)
 

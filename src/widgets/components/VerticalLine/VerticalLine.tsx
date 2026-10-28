@@ -5,13 +5,14 @@ import { VerticalLineProps } from 'types/VerticalLine'
 import { useGitContext } from 'hooks/useGitContext'
 import { BreakPoint } from 'components/BreakPoint'
 import { useGraphContext } from 'hooks/useGraphContext'
+import { INDEX_HASH } from 'constants/constants'
 
 export const VerticalLine = ({ state, columnIndex, columnColour, commit, indexCommitNodeBorder, isIndex }: VerticalLineProps) => {
   const { breakPointTheme } = useGraphContext()
   const { headCommit, isServerSidePaginated, headCommitHash, isIndexVisible } = useGitContext()
 
   const lineColour = isIndex ? indexCommitNodeBorder : columnColour
-  const isRowCommitIndexNode = commit.hash === 'index'
+  const isRowCommitIndexNode = commit.hash === INDEX_HASH
   const rowsCommitIsHead = commit.hash === headCommit?.hash && state.isNode
 
   const border = useMemo<CSSProperties>(() => {

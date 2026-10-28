@@ -1,16 +1,22 @@
 import { GraphColumnState } from 'components/GraphColumn'
 
-const keysToIgnore: (keyof GraphColumnState)[] = [
-  'isFirstRow',
-  'isLastRow'
-]
-
-export const isColumnEmpty = (state: GraphColumnState): boolean => {
+export const isColumnEmpty = (state: GraphColumnState | undefined): boolean => {
   if (!state) {
     return true
   }
 
-  return Object.entries(state)
-    .filter(([key]) => !keysToIgnore.includes(key as keyof GraphColumnState))
-    .every(([,value]) => !value)
+  return (
+    !state.isNode &&
+    !state.isHorizontalLine &&
+    !state.isVerticalLine &&
+    !state.isVerticalIndexLine &&
+    !state.isLeftDownCurve &&
+    !state.isLeftUpCurve &&
+    !state.isPlaceholderSkeleton &&
+    !state.isTopBreakPoint &&
+    !state.isBottomBreakPoint &&
+    !state.isColumnAboveEmpty &&
+    !state.isColumnBelowEmpty &&
+    (state.mergeSourceColumns?.length ?? 0) === 0
+  )
 }

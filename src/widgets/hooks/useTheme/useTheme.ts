@@ -3,6 +3,7 @@ import { GetCommitNodeColoursArgs, ThemeFunctions } from 'types/useTheme'
 import { useCallback, useMemo } from 'react'
 import { Commit } from 'types/Commit'
 import { useThemeContext } from 'hooks/useThemeContext'
+import { FALLBACK_COMMIT_COLOUR, HOVER_TRANSITION_DURATION, INDEX_HASH, SELECTED_BG_OPACITY } from 'constants/constants'
 
 export const useTheme = (): ThemeFunctions => {
   const { graphData } = useGitContext()
@@ -30,11 +31,12 @@ export const useTheme = (): ThemeFunctions => {
     if (rgb && matches != null) {
       const [r_fg, g_fg, b_fg] = matches.map(Number)
       const backgroundRgb = theme === 'dark' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'
-      const [r_bg, g_bg, b_bg] = backgroundRgb.match(/\d+/g)!.map(Number)
+      const bgMatches = backgroundRgb.match(/\d+/g)
+      const [r_bg, g_bg, b_bg] = (bgMatches ?? ['0', '0', '0']).map(Number)
 
-      const r_new = Math.round(r_fg * opacity + r_bg * (1 - opacity))
-      const g_new = Math.round(g_fg * opacity + g_bg * (1 - opacity))
-      const b_new = Math.round(b_fg * opacity + b_bg * (1 - opacity))
+      const r_new = Math.round((r_fg ?? 0) * opacity + (r_bg ?? 0) * (1 - opacity))
+      const g_new = Math.round((g_fg ?? 0) * opacity + (g_bg ?? 0) * (1 - opacity))
+      const b_new = Math.round((b_fg ?? 0) * opacity + (b_bg ?? 0) * (1 - opacity))
 
       return `rgb(${r_new}, ${g_new}, ${b_new})`
     }
@@ -47,17 +49,21 @@ export const useTheme = (): ThemeFunctions => {
   }, [])
 
   const getGraphColumnColour = useCallback((columnIndex: number) => {
+    if (colours.length === 0) {
+      return FALLBACK_COMMIT_COLOUR
+    }
+
     const colour = colours[columnIndex]
 
     if (!colour) {
-      return colours[columnIndex % colours.length]
+      return colours[columnIndex % colours.length] ?? FALLBACK_COMMIT_COLOUR
     }
 
     return colour
   }, [colours])
 
   const getCommitColour = useCallback((commit: Commit) => {
-    if (commit.hash === 'index') {
+    if (commit.hash === INDEX_HASH) {
       return getGraphColumnColour(0)
     }
 
@@ -68,19 +74,18 @@ export const useTheme = (): ThemeFunctions => {
       return getGraphColumnColour(columnIndex)
     }
 
-    console.warn(`Commit ${commit.hash} did not have a mapped graph position`)
-    return 'rgb(0, 0, 0)'
+    return FALLBACK_COMMIT_COLOUR
   }, [getGraphColumnColour, graphData.positions])
 
   const getCommitNodeColours = useCallback((args: GetCommitNodeColoursArgs) => {
     return {
-      backgroundColour: shiftAlphaChannel(args.columnColour, 0.15),
+      backgroundColour: shiftAlphaChannel(args.columnColour, SELECTED_BG_OPACITY),
       borderColour: args.columnColour
     }
   }, [shiftAlphaChannel])
 
   const getGraphColumnSelectedBackgroundColour = useCallback((columnIndex: number) => {
-    return reduceOpacity(getGraphColumnColour(columnIndex), 0.15)
+    return reduceOpacity(getGraphColumnColour(columnIndex), SELECTED_BG_OPACITY)
   }, [getGraphColumnColour, reduceOpacity])
 
   const getTooltipBackground = useCallback((commit: Commit) => {
@@ -102,6 +107,6 @@ export const useTheme = (): ThemeFunctions => {
     getGraphColumnColour,
     getCommitNodeColours,
     getGraphColumnSelectedBackgroundColour,
-    hoverTransitionDuration: 0.3
+    hoverTransitionDuration: HOVER_TRANSITION_DURATION
   }
 }

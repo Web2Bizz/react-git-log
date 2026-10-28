@@ -3,6 +3,7 @@ import styles from './IndexPseudoCommitNode.module.scss'
 import { useTheme } from 'hooks/useTheme'
 import { IndexPseudoCommitNodeProps } from 'types/IndexPseudoCommitNode'
 import { useGraphContext } from 'hooks/useGraphContext'
+import { INDEX_NODE_BORDER_OPACITY } from 'constants/constants'
 
 export const IndexPseudoCommitNode = ({ animate, columnColour }: IndexPseudoCommitNodeProps) => {
   const { nodeSize } = useGraphContext()
@@ -14,12 +15,12 @@ export const IndexPseudoCommitNode = ({ animate, columnColour }: IndexPseudoComm
       data-testid='index-pseudo-commit-node'
       className={classNames(
         styles.indexNode,
-        { [styles.spin]: animate },
+        animate === true ? styles.spin : undefined,
       )}
       style={{
         width: nodeSize,
         height: nodeSize,
-        border: `2px dotted ${shiftAlphaChannel(columnColour, 0.5)}`,
+        border: `2px dotted ${shiftAlphaChannel(columnColour, INDEX_NODE_BORDER_OPACITY)}`,
         backgroundColor: shiftAlphaChannel(columnColour, 0.05),
       }}
     />

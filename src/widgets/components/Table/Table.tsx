@@ -83,7 +83,7 @@ export const Table = ({
           </div>
         )}
 
-        {tableData.length == 0 && placeholderData.map(({ commit }, i) => (
+        {tableData.length === 0 && placeholderData.map(({ commit }, i) => (
           <TableRow
             index={i}
             isPlaceholder

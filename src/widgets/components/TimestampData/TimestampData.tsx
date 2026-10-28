@@ -15,6 +15,10 @@ export const TimestampData = ({ index, timestamp, isPlaceholder, style }: Timest
   const formattedTimestamp = useMemo(() => {
     const commitDate = dayjs.utc(timestamp)
 
+    if (!commitDate.isValid()) {
+      return timestamp
+    }
+
     if (dayjs.utc().diff(commitDate, 'week') >= 1) {
       return commitDate.format(timestampFormat)
     }

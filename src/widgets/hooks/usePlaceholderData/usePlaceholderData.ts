@@ -6,7 +6,7 @@ export const usePlaceholderData = (): PlaceholderData => {
   const placeholderData = useMemo(() => {
     return placeholderCommits.map((commit, i) => ({
       commit,
-      columns: columns[i].map(col => ({
+      columns: (columns[i] ?? []).map(col => ({
         ...col,
         isPlaceholderSkeleton: true
       }))

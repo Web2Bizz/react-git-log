@@ -16,13 +16,13 @@ export class GraphMatrixColumns {
 
   public update(columnIndex: number, state: GraphColumnState) {
     this._columns[columnIndex] = {
-      ...this._columns[columnIndex],
+      ...(this._columns[columnIndex] ?? {}),
       ...state
     }
   }
 
   public hasCommitNode(index: number) {
-    return this._columns[index].isNode
+    return this._columns[index]?.isNode ?? false
   }
 
   public get columns() {

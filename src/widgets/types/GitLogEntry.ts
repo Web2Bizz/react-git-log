@@ -52,4 +52,4 @@ export type GitLogEntryBase = {
  * type, and it will be passed back to you in any
  * relevant callback functions.
  */
-export type GitLogEntry<T = object> = GitLogEntryBase & T
+export type GitLogEntry<T = unknown> = GitLogEntryBase & T

@@ -1,4 +1,5 @@
 import { Commit } from 'types/Commit'
+import { INDEX_HASH } from 'constants/constants'
 import { ActiveBranches } from './ActiveBranches'
 import { CommitNodeLocation, EdgeType, GraphEdge } from 'types/GraphData'
 import { ActiveNodes } from './ActiveNodes'
@@ -67,10 +68,10 @@ export class GraphDataBuilder<T> {
 
   public build() {
     if (this._headCommit) {
-      this._activeNodes.enqueue([
-        this._hashToIndex.get(this._headCommit.hash)!,
-        'index'
-      ])
+      const headIndex = this._hashToIndex.get(this._headCommit.hash)
+      if (headIndex !== undefined) {
+        this._activeNodes.enqueue([headIndex, INDEX_HASH])
+      }
     }
 
     for (const commit of this._commits) {
@@ -82,7 +83,7 @@ export class GraphDataBuilder<T> {
       const mergeChildren = this.getMergeChildren(commit)
 
       const highestChild = this.findHighestChild(mergeChildren)
-      const invalidIndices = highestChild ? this._activeNodes.get(highestChild) : new Set<number>()
+      const invalidIndices = (highestChild !== undefined ? this._activeNodes.get(highestChild) : undefined) ?? new Set<number>()
 
       const { commitToReplaceHash, commitToReplaceColumn } = this.findCommitToReplace(
         commitHash,
@@ -95,8 +96,12 @@ export class GraphDataBuilder<T> {
         this._activeBranches.setHash(columnIndex, commitHash)
       } else if (childHashes.length > 0) {
         const childHash = childHashes[0]
-        const childColumn = this._positions.get(childHash)?.[1] ?? 0
-        columnIndex = this._activeBranches.insertCommit(commitHash, childColumn, invalidIndices)
+        if (childHash === undefined) {
+          columnIndex = this._activeBranches.insertCommit(commitHash, 0, new Set())
+        } else {
+          const childColumn = this._positions.get(childHash)?.[1] ?? 0
+          columnIndex = this._activeBranches.insertCommit(commitHash, childColumn, invalidIndices)
+        }
       } else {
         columnIndex = this._activeBranches.insertCommit(commitHash, 0, new Set())
       }
@@ -110,9 +115,9 @@ export class GraphDataBuilder<T> {
 
       const parentIndices = commit.parents.map(parent => {
         return this._hashToIndex.get(parent)
-      }).filter(i => i !== undefined)
+      }).filter((i): i is number => i !== undefined)
 
-      const highestParentIndex: [number, string] = [Math.max(...parentIndices), commitHash]
+      const highestParentIndex: [number, string] = [parentIndices.length > 0 ? Math.max(...parentIndices) : 0, commitHash]
       this._activeNodes.enqueue(highestParentIndex)
 
       branchChildren.forEach(child => {
@@ -223,7 +228,7 @@ export class GraphDataBuilder<T> {
     let commitToReplaceColumn = Infinity
 
     if (hash === this._headCommit?.hash) {
-      commitToReplaceHash = 'index'
+      commitToReplaceHash = INDEX_HASH
       commitToReplaceColumn = 0
     } else {
       for (const childHash of branchChildren) {

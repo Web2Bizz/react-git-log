@@ -152,12 +152,11 @@ describe('useTheme', () => {
       expect(result.current.getCommitColour({ hash: 'abc123' } as Commit)).toBe('green')
     })
 
-    it('logs a warning and returns default black for unmapped commit', () => {
+    it('returns fallback colour for unmapped commit without logging', () => {
       vi.spyOn(themeContext, 'useThemeContext').mockReturnValue(themeContextBag({
         colours: ['red', 'green', 'blue']
       }))
 
-      const consoleWarnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
       vi.spyOn(gitContext, 'useGitContext').mockReturnValue(
         gitContextBag({
           graphData: graphData({
@@ -168,9 +167,6 @@ describe('useTheme', () => {
 
       const { result } = renderHook(useTheme)
       expect(result.current.getCommitColour({ hash: 'unknown' } as Commit)).toBe('rgb(0, 0, 0)')
-      expect(consoleWarnSpy).toHaveBeenCalledWith('Commit unknown did not have a mapped graph position')
-
-      consoleWarnSpy.mockRestore()
     })
   })
 

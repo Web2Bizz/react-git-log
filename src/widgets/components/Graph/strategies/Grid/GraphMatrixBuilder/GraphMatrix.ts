@@ -22,27 +22,39 @@ export class GraphMatrix {
   }
 
   public isColumnBelowEmpty(rowIndex: number, columnIndex: number) {
-    return this._matrix.has(rowIndex + 1)
-      ? isColumnEmpty(this._matrix.get(rowIndex + 1)!.columns[columnIndex])
-      : false
+    const row = this._matrix.get(rowIndex + 1)
+    if (!row) {
+      return false
+    }
+
+    return isColumnEmpty(row.columns[columnIndex])
   }
 
   public isColumnAboveEmpty(rowIndex: number, columnIndex: number) {
-    return this._matrix.has(rowIndex - 1)
-      ? isColumnEmpty(this._matrix.get(rowIndex - 1)!.columns[columnIndex])
-      : false
+    const row = this._matrix.get(rowIndex - 1)
+    if (!row) {
+      return false
+    }
+
+    return isColumnEmpty(row.columns[columnIndex])
   }
 
   public isColumnAboveBreakPoint(rowIndex: number, columnIndex: number) {
-    return this._matrix.has(rowIndex - 1)
-      ? this._matrix.get(rowIndex - 1)!.columns[columnIndex].isBottomBreakPoint
-      : false
+    const row = this._matrix.get(rowIndex - 1)
+    if (!row) {
+      return false
+    }
+
+    return row.columns[columnIndex]?.isBottomBreakPoint ?? false
   }
 
   public hasCommitNodeAt(rowIndex: number, columnIndex: number) {
-    return this._matrix.has(rowIndex)
-      ? this._matrix.get(rowIndex)!.columns[columnIndex].isNode
-      : false
+    const row = this._matrix.get(rowIndex)
+    if (!row) {
+      return false
+    }
+
+    return row.columns[columnIndex]?.isNode ?? false
   }
 
   public get value() {
