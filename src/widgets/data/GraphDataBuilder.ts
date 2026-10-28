@@ -3,6 +3,7 @@ import { INDEX_HASH } from 'constants/constants'
 import { ActiveBranches } from './ActiveBranches'
 import { CommitNodeLocation, EdgeType, GraphEdge } from 'types/GraphData'
 import { ActiveNodes } from './ActiveNodes'
+import { AncestorFinder } from './AncestorFinder'
 
 export type GraphDataBuilderProps<T> = {
   commits: Commit<T>[],
@@ -244,59 +245,5 @@ export class GraphDataBuilder<T> {
       commitToReplaceHash,
       commitToReplaceColumn
     }
-  }
-}
-
-type CacheProps = {
-  parents: Map<string, string[]>
-  visibleHashes: Set<string>
-}
-
-class AncestorFinder {
-  private readonly cache = new Map<string, string | undefined>()
-
-  private readonly _parents: Map<string, string[]>
-  private readonly _visibleHashes: Set<string>
-
-  constructor(props: CacheProps) {
-    this._parents = props.parents
-    this._visibleHashes = props.visibleHashes
-  }
-
-  public findClosestVisibleAncestor(hash: string) {
-    return this.dfs(hash)
-  }
-
-  private dfs(hash: string): string | undefined {
-    if (this.cache.has(hash)) {
-      return this.cache.get(hash)
-    }
-
-    const parentHashes = this._parents.get(hash)
-
-    if (!parentHashes || parentHashes.length === 0) {
-      this.cache.set(hash, undefined)
-      return undefined
-    }
-
-    for (const parentHash of parentHashes) {
-      if (this._visibleHashes.has(parentHash)) {
-        this.cache.set(hash, parentHash)
-        return parentHash
-      }
-    }
-
-    for (const parentHash of parentHashes) {
-      const ancestor = this.dfs(parentHash)
-
-      if (ancestor) {
-        this.cache.set(hash, ancestor)
-        return ancestor
-      }
-    }
-
-    this.cache.set(hash, undefined)
-
-    return undefined
   }
 }
