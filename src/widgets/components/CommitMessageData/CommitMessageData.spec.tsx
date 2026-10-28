@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import { CommitMessageData } from './CommitMessageData'
-import * as gitContext from 'context/GitContext'
+import * as gitContext from 'hooks/useGitContext/useGitContext'
 import { gitContextBag } from 'test/stubs'
 
 describe('CommitMessageData', () => {

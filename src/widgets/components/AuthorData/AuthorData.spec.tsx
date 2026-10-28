@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 import { AuthorData } from './AuthorData'
-import type { AuthorDataProps } from './types'
+import type { AuthorDataProps } from 'types/AuthorData'
 import { table } from 'test/elements/Table'
 
 const renderAuthorData = (props: Partial<AuthorDataProps> = {}) => {

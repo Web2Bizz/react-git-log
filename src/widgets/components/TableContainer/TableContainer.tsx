@@ -1,11 +1,11 @@
 import classNames from 'classnames'
 import styles from './TableContainer.module.scss'
 import { PropsWithChildren, useMemo } from 'react'
-import { useGitContext } from 'context/GitContext'
-import { placeholderCommits } from 'modules/Graph/strategies/Grid/hooks/usePlaceholderData/data'
+import { useGitContext } from 'hooks/useGitContext'
+import { placeholderCommits } from 'hooks/usePlaceholderData/data'
 import { ROW_HEIGHT } from 'constants/constants'
-import { HEADER_ROW_HEIGHT, TABLE_MARGIN_TOP } from 'modules/Table/constants'
-import { TableContainerProps } from 'modules/Table/components/TableContainer/types'
+import { HEADER_ROW_HEIGHT, TABLE_MARGIN_TOP } from 'components/Table/constants'
+import { TableContainerProps } from 'types/TableContainer'
 
 export const TableContainer = ({
   row,

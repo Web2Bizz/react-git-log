@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react'
-import { TableContainer } from 'modules/Table/components/TableContainer/TableContainer'
+import { TableContainer } from 'components/TableContainer/TableContainer'
 
 describe('Table Container', () => {
   it('should render a wrapping div element with the correct styles when a custom row is used', () => {

@@ -2,7 +2,7 @@ import styles from './IndexStatus.module.scss'
 import Pencil from 'assets/pencil.svg?react'
 import Plus from 'assets/plus.svg?react'
 import Minus from 'assets/minus.svg?react'
-import { useGitContext } from 'context/GitContext'
+import { useGitContext } from 'hooks/useGitContext'
 import classNames from 'classnames'
 
 export const IndexStatus = () => {

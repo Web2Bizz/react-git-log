@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import { IndexStatus } from 'modules/Table/components/IndexStatus/IndexStatus'
-import * as gitContext from 'context/GitContext'
+import { IndexStatus } from 'components/IndexStatus/IndexStatus'
+import * as gitContext from 'hooks/useGitContext/useGitContext'
 import { gitContextBag } from 'test/stubs'
 
 describe('Index Status', () => {

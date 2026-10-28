@@ -1,5 +1,5 @@
 import styles from './AuthorData.module.scss'
-import { AuthorDataProps } from './types'
+import { AuthorDataProps } from 'types/AuthorData'
 import { useMemo } from 'react'
 
 export const AuthorData = ({ author, index, style, isPlaceholder }: AuthorDataProps) => {

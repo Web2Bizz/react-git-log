@@ -1,7 +1,7 @@
 import { fireEvent, render } from '@testing-library/react'
-import { TableRow } from 'modules/Table/components/TableRow/TableRow'
+import { TableRow } from 'components/TableRow/TableRow'
 import { commit, gitContextBag, graphData, themeFunctions } from 'test/stubs'
-import * as gitContext from 'context/GitContext'
+import * as gitContext from 'hooks/useGitContext/useGitContext'
 import * as useTheme from 'hooks/useTheme'
 import { table } from 'test/elements/Table'
 

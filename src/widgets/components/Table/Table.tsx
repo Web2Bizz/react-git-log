@@ -5,12 +5,12 @@ import { Commit } from 'types/Commit'
 import { useTheme } from 'hooks/useTheme'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import { useGitContext } from 'context/GitContext'
-import { usePlaceholderData } from 'modules/Graph/strategies/Grid/hooks/usePlaceholderData'
-import { TableRow } from 'modules/Table/components/TableRow'
-import { TableContainer } from 'modules/Table/components/TableContainer'
-import { TableProps } from './types'
-import { TableContext, TableContextBag } from './context'
+import { useGitContext } from 'hooks/useGitContext'
+import { usePlaceholderData } from 'hooks/usePlaceholderData'
+import { TableRow } from 'components/TableRow'
+import { TableContainer } from 'components/TableContainer'
+import { TableProps } from 'types/Table'
+import { TableContext, TableContextBag } from 'context/TableContext'
 
 dayjs.extend(advancedFormat)
 dayjs.extend(relativeTime)

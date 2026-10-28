@@ -1,6 +1,6 @@
 import styles from './CommitMessageData.module.scss'
-import { CommitMessageDataProps } from './types'
-import { IndexStatus } from 'modules/Table/components/IndexStatus'
+import { CommitMessageDataProps } from 'types/CommitMessageData'
+import { IndexStatus } from 'components/IndexStatus'
 
 export const CommitMessageData = ({ index, isIndex, commitMessage, style }: CommitMessageDataProps) => {
   return (

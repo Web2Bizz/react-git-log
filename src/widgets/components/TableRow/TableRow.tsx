@@ -1,13 +1,13 @@
 import styles from './TableRow.module.scss'
-import { GitLogTableRowProps } from './types'
+import { GitLogTableRowProps } from 'types/TableRow'
 import { cloneElement, CSSProperties, useMemo } from 'react'
 import { useTheme } from 'hooks/useTheme'
-import { useGitContext } from 'context/GitContext'
+import { useGitContext } from 'hooks/useGitContext'
 import { useSelectCommit } from 'hooks/useSelectCommit'
 import { BACKGROUND_HEIGHT_OFFSET, ROW_HEIGHT } from 'constants/constants'
-import { CommitMessageData } from 'modules/Table/components/CommitMessageData'
-import { AuthorData } from 'modules/Table/components/AuthorData'
-import { TimestampData } from 'modules/Table/components/TimestampData'
+import { CommitMessageData } from 'components/CommitMessageData'
+import { AuthorData } from 'components/AuthorData'
+import { TimestampData } from 'components/TimestampData'
 
 export const TableRow = ({
   row,

@@ -1,10 +1,10 @@
 import styles from './TimestampData.module.scss'
-import { TimestampDataProps } from './types'
+import { TimestampDataProps } from 'types/TimestampData'
 import { useMemo } from 'react'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
 import relativeTime from 'dayjs/plugin/relativeTime'
-import { useTableContext } from 'modules/Table/context'
+import { useTableContext } from 'hooks/useTableContext'
 
 dayjs.extend(utc)
 dayjs.extend(relativeTime)
