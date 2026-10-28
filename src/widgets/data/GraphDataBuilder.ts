@@ -1,6 +1,6 @@
 import { Commit } from 'types/Commit'
 import { ActiveBranches } from './ActiveBranches'
-import { CommitNodeLocation, EdgeType, GraphEdge } from './types'
+import { CommitNodeLocation, EdgeType, GraphEdge } from 'types/GraphData'
 import { ActiveNodes } from './ActiveNodes'
 
 export type GraphDataBuilderProps<T> = {
