@@ -47,7 +47,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-0"
         id="tag-line-0"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <button
@@ -92,7 +92,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-1"
         id="tag-line-1"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <button
@@ -137,7 +137,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-2"
         id="tag-line-2"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <button
@@ -182,7 +182,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-3"
         id="tag-line-3"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <button
@@ -227,7 +227,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-4"
         id="tag-line-4"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <button
@@ -272,7 +272,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-5"
         id="tag-line-5"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -461,7 +461,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-30"
         id="tag-line-30"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -585,7 +585,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-43"
         id="tag-line-43"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -709,7 +709,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-56"
         id="tag-line-56"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -863,7 +863,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-74"
         id="tag-line-74"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -1209,7 +1209,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-124"
         id="tag-line-124"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -1345,7 +1345,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-139"
         id="tag-line-139"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -1619,7 +1619,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-177"
         id="tag-line-177"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -1875,7 +1875,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-212"
         id="tag-line-212"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -2425,7 +2425,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-296"
         id="tag-line-296"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -2597,7 +2597,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-317"
         id="tag-line-317"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -2799,7 +2799,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-343"
         id="tag-line-343"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div
@@ -3025,7 +3025,7 @@ exports[`Tags > should render correctly when the URL builder function is passed 
         class="tagLine"
         data-testid="tag-line-373"
         id="tag-line-373"
-        style="opacity: 0.4; right: 0px; width: 0px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
+        style="opacity: 0.4; right: -10px; width: 10px; border-top: 2px dotted rgb(0, 255, 128); animation-duration: 0.3s;"
       />
     </button>
     <div

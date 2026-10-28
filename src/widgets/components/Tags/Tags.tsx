@@ -56,11 +56,14 @@ export const Tags = () => {
     const isNormalOrientation = graphOrientation === 'normal'
     const numberOfColumns = graphData.graphWidth
     const columnWidth = graphWidth / numberOfColumns
+    // Tags container lost its right padding, so extend the dotted
+    // line to still reach the commit node in the graph.
+    const paddingCompensation = 10
 
     if (commit.hash === 'index') {
-      return isNormalOrientation
+      return (isNormalOrientation
         ? columnWidth / 2
-        : ((numberOfColumns - 1) * columnWidth) + (columnWidth / 2)
+        : ((numberOfColumns - 1) * columnWidth) + (columnWidth / 2)) + paddingCompensation
     }
 
     const columnIndex = graphData.positions.get(commit.hash)![1]
@@ -68,7 +71,7 @@ export const Tags = () => {
       ? columnIndex
       : numberOfColumns - 1 - columnIndex
 
-    return (columnWidth * normalisedColumnIndex) + (columnWidth / 2)
+    return (columnWidth * normalisedColumnIndex) + (columnWidth / 2) + paddingCompensation
   }, [graphWidth, graphData.graphWidth, graphData.positions, graphOrientation])
 
   return (
