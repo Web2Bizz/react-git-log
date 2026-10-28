@@ -1,15 +1,13 @@
 import { ColumnBackgroundProps } from 'types/ColumnBackground'
-import classNames from 'classnames'
 import styles from './ColumnBackground.module.scss'
 import { CSSProperties, useMemo } from 'react'
 import { BACKGROUND_HEIGHT_OFFSET, ROW_HEIGHT } from 'constants/constants'
 import { useGitContext } from 'hooks/useGitContext'
 import { useGraphContext } from 'hooks/useGraphContext'
-import { getColumnBackgroundSize } from 'utils/getColumnBackgroundSize'
 
-export const ColumnBackground = ({ id, index, colour, commitNodeIndex }: ColumnBackgroundProps) => {
+export const ColumnBackground = ({ id, index, colour }: ColumnBackgroundProps) => {
   const { showTable } = useGitContext()
-  const { nodeSize, orientation, highlightedBackgroundHeight } = useGraphContext()
+  const { nodeSize, highlightedBackgroundHeight } = useGraphContext()
 
   const height = useMemo<number>(() => {
     if (highlightedBackgroundHeight) {
@@ -21,51 +19,47 @@ export const ColumnBackground = ({ id, index, colour, commitNodeIndex }: ColumnB
   }, [highlightedBackgroundHeight, nodeSize])
 
   const style = useMemo<CSSProperties>(() => {
-    const offset = getColumnBackgroundSize({ nodeSize })
-
     if (!showTable) {
-      const backgroundSize = nodeSize + offset
-
       return {
-        borderRadius: '50%',
-        height: `${backgroundSize}px`,
-        width: `${backgroundSize}px`,
+        height,
         background: colour,
-        left: `calc(50% - ${backgroundSize / 2}px)`
+        width: 'calc(100% + 12px)',
+        left: -12,
+        borderRadius: 0
       }
     }
 
-
-    if (index === commitNodeIndex) {
+    // With the table shown the highlight must be a continuous strip
+    // across the whole graph (from its left edge into the table).
+    // Every column renders a full-width background so the hover does
+    // not start at the commit circle. No rounding, square edges to
+    // merge with the table row background. First column extends
+    // left with a padding so the strip starts before the graph.
+    if (index === 0) {
       return {
-        width: `calc(50% + ${nodeSize / 2}px + ${offset / 2}px)`,
         height,
         background: colour,
-        right: 0,
-        borderTopLeftRadius: '50%',
-        borderBottomLeftRadius: '50%'
+        width: 'calc(100% + 12px)',
+        left: -12,
+        borderRadius: 0
       }
     }
 
     return {
       height,
-      background: colour
+      background: colour,
+      width: '100%',
+      left: 0,
+      borderRadius: 0
     }
-  }, [nodeSize, showTable, index, commitNodeIndex, height, colour])
+  }, [nodeSize, showTable, index, height, colour])
 
-  const shouldShowFullBackground = orientation === 'normal'
-    ? index > commitNodeIndex
-    : index < commitNodeIndex
-  
   return (
     <div
       id={`column-background-${index}-${id}`}
       data-testid={`column-background-${index}-${id}`}
       style={style}
-      className={classNames(
-        styles.background,
-        { [styles.backgroundSquare]: shouldShowFullBackground }
-      )}
+      className={styles.background}
     />
   )
 }

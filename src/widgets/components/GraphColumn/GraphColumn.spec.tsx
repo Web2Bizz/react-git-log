@@ -473,7 +473,7 @@ describe('GraphColumn', () => {
       expect(graphColumn.withPreviewedBackground({ column: 7, shouldExist: false })).not.toBeInTheDocument()
     })
 
-    it('should not render a column background if the the table is not shown and the commit on this row is in a different column', () => {
+    it('should render a column background if the table is not shown even when the commit on this row is in a different column', () => {
       const selectedCommit = commit({ hash: 'selected-commit' })
 
       vi.spyOn(gitContext, 'useGitContext').mockReturnValue(gitContextBag({
@@ -491,7 +491,7 @@ describe('GraphColumn', () => {
         />
       )
 
-      expect(graphColumn.withSelectedBackground({ column: 7, shouldExist: false })).not.toBeInTheDocument()
+      expect(graphColumn.withSelectedBackground({ column: 7 })).toBeInTheDocument()
       expect(graphColumn.withPreviewedBackground({ column: 7, shouldExist: false })).not.toBeInTheDocument()
     })
   })
@@ -542,7 +542,7 @@ describe('GraphColumn', () => {
       expect(graphColumn.withSelectedBackground({ column: 5, shouldExist: false })).not.toBeInTheDocument()
     })
 
-    it('should render a curved column background if the column has a commit node in it', () => {
+    it('should render a full-width column background if the column has a commit node in it', () => {
       const previewedCommit = commit({ hash: 'previewed-commit' })
       vi.spyOn(gitContext, 'useGitContext').mockReturnValue(gitContextBag({
         previewedCommit
@@ -567,12 +567,11 @@ describe('GraphColumn', () => {
       const background = graphColumn.withPreviewedBackground({ column: 3 })
       expect(background).toBeInTheDocument()
 
-      // Since this is the nodes column, the background should be rounded
+      // The background spans the full column width so the hover
+      // covers the whole row, not just the commit circle.
       const backgroundStyle = getComputedStyle(background)
-      expect(backgroundStyle.right).toBe('0px')
-      expect(backgroundStyle.borderTopLeftRadius).toBe('50%')
-      expect(backgroundStyle.borderBottomLeftRadius).toBe('50%')
-      expect(backgroundStyle.width).toBe('calc(50% + 20px)')
+      expect(backgroundStyle.left).toBe('0px')
+      expect(backgroundStyle.width).toBe('100%')
       expect(backgroundStyle.background).toBe(expectedBackgroundColour)
       expect(backgroundStyle.height).toBe('40px')
 
@@ -651,7 +650,7 @@ describe('GraphColumn', () => {
       expect(graphColumn.withSelectedBackground({ column: 7, shouldExist: false })).not.toBeInTheDocument()
     })
 
-    it('should not render a column background if the the table is not shown and the commit on this row is in a different column', () => {
+    it('should render a column background if the table is not shown even when the commit on this row is in a different column', () => {
       const previewedCommit = commit({ hash: 'previewed-commit' })
 
       vi.spyOn(gitContext, 'useGitContext').mockReturnValue(gitContextBag({
@@ -669,7 +668,7 @@ describe('GraphColumn', () => {
         />
       )
 
-      expect(graphColumn.withPreviewedBackground({ column: 7, shouldExist: false })).not.toBeInTheDocument()
+      expect(graphColumn.withPreviewedBackground({ column: 7 })).toBeInTheDocument()
       expect(graphColumn.withSelectedBackground({ column: 7, shouldExist: false })).not.toBeInTheDocument()
     })
   })
