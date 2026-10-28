@@ -1,6 +1,6 @@
 import { commit } from 'test/stubs'
 import { renderHook } from '@testing-library/react'
-import { useGitContext } from 'context/GitContext/useGitContext'
+import { useGitContext } from 'hooks/useGitContext/useGitContext'
 
 describe('GitContext default implementation', () => {
   const consoleSpy = vi.spyOn(console, 'debug')

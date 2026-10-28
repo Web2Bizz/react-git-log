@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { ThemeContextBag } from 'context/ThemeContext/types'
+import { ThemeContextBag } from 'types/ThemeContext'
 import { neonAuroraDarkColours } from 'hooks/useTheme'
 
 export const ThemeContext = createContext<ThemeContextBag>({

@@ -1,8 +1,8 @@
 import { createContext } from 'react'
-import { GitContextBag } from './types'
+import { GitContextBag } from 'types/GitContext'
 import { Commit } from 'types/Commit'
 import { DEFAULT_NODE_SIZE } from 'constants/constants'
-import { GraphOrientation } from 'modules/Graph'
+import { GraphOrientation } from 'components/Graph'
 
 const defaultCommit: Commit = {
   hash: 'defaultCommit',

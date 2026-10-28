@@ -1,5 +1,5 @@
 import { createContext } from 'react'
-import { GraphContextBag } from './types'
+import { GraphContextBag } from 'types/GraphContext'
 
 export const GraphContext = createContext<GraphContextBag>({
   showCommitNodeHashes: false,

@@ -1,6 +1,6 @@
 import { ThemeContext } from 'context/ThemeContext/ThemeContext'
 import { PropsWithChildren, useMemo } from 'react'
-import { ThemeContextBag, ThemeContextProviderProps } from 'context/ThemeContext/types'
+import { ThemeContextBag, ThemeContextProviderProps } from 'types/ThemeContext'
 import { neonAuroraDarkColours, neonAuroraLightColours, useTheme } from 'hooks/useTheme'
 import { generateRainbowGradient } from 'hooks/useTheme/createRainbowTheme'
 
