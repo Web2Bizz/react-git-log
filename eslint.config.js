@@ -64,7 +64,7 @@ export default tseslint.config(
   },
   {
     name: 'react-git-log-test-overrides',
-    files: ['src/**/*.spec.{ts,tsx}', 'src/widgets/_test/**/*.{ts,tsx}'],
+    files: ['src/**/*.spec.{ts,tsx}', 'src/widgets/git-graph/_test/**/*.{ts,tsx}'],
     rules: {
       'no-console': 'off'
     }

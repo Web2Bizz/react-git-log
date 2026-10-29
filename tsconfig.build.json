@@ -1,27 +1,27 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "src/widgets/index.ts",
-    "src/widgets/components/GitLog/types.ts",
-    "src/widgets/components/GitLog/GitLog.tsx",
-    "src/widgets/components/GitLog/GitLogPaged.tsx",
+    "src/widgets/git-graph/index.ts",
+    "src/widgets/git-graph/components/GitLog/types.ts",
+    "src/widgets/git-graph/components/GitLog/GitLog.tsx",
+    "src/widgets/git-graph/components/GitLog/GitLogPaged.tsx",
 
-    "src/widgets/components/Graph/index.ts",
-    "src/widgets/components/Graph/types.ts",
-    "src/widgets/components/Graph/GraphHTMLGrid.tsx",
+    "src/widgets/git-graph/components/Graph/index.ts",
+    "src/widgets/git-graph/components/Graph/types.ts",
+    "src/widgets/git-graph/components/Graph/GraphHTMLGrid.tsx",
 
-    "src/widgets/components/Table/index.ts",
-    "src/widgets/components/Table/types.ts",
-    "src/widgets/components/Table/Table.tsx",
+    "src/widgets/git-graph/components/Table/index.ts",
+    "src/widgets/git-graph/components/Table/types.ts",
+    "src/widgets/git-graph/components/Table/Table.tsx",
 
-    "src/widgets/components/Tags/index.ts",
-    "src/widgets/components/Tags/Tags.tsx",
+    "src/widgets/git-graph/components/Tags/index.ts",
+    "src/widgets/git-graph/components/Tags/Tags.tsx",
 
-    "src/widgets/types/svg.d.ts",
-    "src/widgets/types/GitLogEntry.ts",
-    "src/widgets/types/Commit.ts",
-    "src/widgets/hooks/useTheme/index.ts",
-    "src/widgets/hooks/useTheme/types.ts"
+    "src/widgets/git-graph/types/svg.d.ts",
+    "src/widgets/git-graph/types/GitLogEntry.ts",
+    "src/widgets/git-graph/types/Commit.ts",
+    "src/widgets/git-graph/hooks/useTheme/index.ts",
+    "src/widgets/git-graph/hooks/useTheme/types.ts"
   ],
   "exclude": [
     "node_modules",
@@ -33,6 +33,6 @@
     "src/*.spec.tsx",
     "src/*.spec.ts",
     "src/**/__tests__",
-    "src/widgets/_test/**"
+    "src/widgets/git-graph/_test/**"
   ]
 }

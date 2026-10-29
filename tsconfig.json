@@ -5,7 +5,7 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "baseUrl": "./src/widgets",
+    "baseUrl": "./src/widgets/git-graph",
     "paths": {
       "modules/*": ["modules/*"],
       "assets/*": ["assets/*"],
@@ -46,7 +46,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/widgets/types/svg.d.ts",
+    "src/widgets/git-graph/types/svg.d.ts",
     "vite.config.ts",
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx"
