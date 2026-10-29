@@ -1,6 +1,7 @@
 import styles from './Tags.module.scss'
 import { BranchTag } from 'components/BranchTag'
 import { useGitContext } from 'hooks/useGitContext'
+import { useVisibleCommits } from 'hooks/useVisibleCommits'
 import { useCallback, useMemo } from 'react'
 import { ROW_HEIGHT } from 'constants/constants'
 import { Commit } from 'types/Commit'
@@ -25,7 +26,7 @@ const prepareCommits = (commits: Commit[]) => {
   })
 }
 
-export const Tags = () => {
+export const Tags = <T,>() => {
   const {
     previewedCommit,
     selectedCommit,
@@ -37,21 +38,19 @@ export const Tags = () => {
     isIndexVisible,
     graphOrientation,
     filter
-  } = useGitContext()
+  } = useGitContext<T>()
+
+  const { tableData } = useVisibleCommits({
+    commits: graphData.commits,
+    filter,
+    paging,
+    indexCommit,
+    isIndexVisible
+  })
 
   const preparedCommits = useMemo(() => {
-    let data = graphData.commits.slice(paging?.startIndex, paging?.endIndex)
-
-    if (filter) {
-      data = filter(data)
-    }
-
-    if (isIndexVisible && indexCommit) {
-      data.unshift(indexCommit)
-    }
-
-    return prepareCommits(data)
-  }, [graphData.commits, paging?.startIndex, paging?.endIndex, filter, isIndexVisible, indexCommit])
+    return prepareCommits(tableData)
+  }, [tableData])
 
   const tagLineWidth = useCallback((commit: Commit) => {
     const isNormalOrientation = graphOrientation === 'normal'

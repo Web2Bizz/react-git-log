@@ -1,12 +1,12 @@
 import { PropsWithChildren, useEffect, useMemo } from 'react'
 import styles from './GraphCore.module.scss'
 import { useGitContext } from 'hooks/useGitContext'
+import { useVisibleCommits } from 'hooks/useVisibleCommits'
 import { useColumnData } from 'hooks/useColumnData'
 import { useResize } from 'hooks/useResize'
 import { DEFAULT_NODE_SIZE } from 'constants/constants'
 import { GraphContext, GraphContextBag } from 'context/GraphContext'
 import { GraphCoreProps } from 'types/GraphCore'
-import { CustomCommitNode } from 'components/Graph'
 
 export const GraphCore = <T,>({
   node,
@@ -26,9 +26,11 @@ export const GraphCore = <T,>({
     filter,
     setNodeSize,
     headCommit,
+    indexCommit,
+    isIndexVisible,
     setGraphOrientation,
     graphData: { graphWidth, commits }
-  } = useGitContext()
+  } = useGitContext<T>()
 
   useEffect(() => {
     // Informs the wrapping GitContext about the
@@ -39,15 +41,13 @@ export const GraphCore = <T,>({
 
   const { width, ref, startResizing } = useResize()
 
-  const visibleCommits = useMemo(() => {
-    const filteredCommits = filter?.(commits) ?? commits
-
-    if (paging) {
-      return filteredCommits.slice(paging.startIndex, paging.endIndex)
-    }
-
-    return filteredCommits
-  }, [commits, filter, paging])
+  const { visibleCommits } = useVisibleCommits({
+    commits,
+    filter,
+    paging,
+    indexCommit,
+    isIndexVisible
+  })
 
   const isHeadCommitVisible = useMemo<boolean>(() => {
     return visibleCommits.find(commit => commit.hash === headCommit?.hash) !== undefined
@@ -57,8 +57,8 @@ export const GraphCore = <T,>({
     visibleCommits: visibleCommits.length
   })
 
-  const contextValue = useMemo<GraphContextBag>(() => ({
-    node: node as CustomCommitNode<unknown>,
+  const contextValue = useMemo<GraphContextBag<T>>(() => ({
+    node,
     showCommitNodeTooltips,
     showCommitNodeHashes,
     nodeTheme,
@@ -74,7 +74,7 @@ export const GraphCore = <T,>({
   }), [node, showCommitNodeTooltips, breakPointTheme, isHeadCommitVisible, showCommitNodeHashes, nodeTheme, nodeSize, graphWidth, virtualColumns, orientation, visibleCommits, columnData, highlightedBackgroundHeight, tooltip])
 
   return (
-    <GraphContext.Provider value={contextValue}>
+    <GraphContext.Provider value={contextValue as GraphContextBag}>
       <div className={styles.container} style={{ width }} ref={ref}>
         {children}
 

@@ -1,21 +1,21 @@
 import { GitLogCoreProps } from 'types/GitLogCore'
 import { PropsWithChildren, useCallback, useMemo, useState } from 'react'
-import { GitContext, GitContextBag } from 'context/GitContext'
-import { GraphData, GraphDataBuilder } from 'data'
-import { computeRelationships } from 'utils/computeRelationships'
-import { temporalTopologicalSort } from 'utils/temporalTopologicalSort'
+import { GitDataContext } from 'context/GitDataContext'
+import { GitSelectionContext } from 'context/GitSelectionContext'
+import { GitViewContext } from 'context/GitViewContext'
+import { GitDataContextBag, GitSelectionContextBag, GitViewContextBag } from 'types/GitContext'
 import { Tags } from 'components/Tags'
 import { GraphHTMLGrid, GraphOrientation } from 'components/Graph'
 import { Table } from 'components/Table'
 import { Layout } from 'components/Layout'
 import { Commit } from 'types/Commit'
-import { DEFAULT_NODE_SIZE, INDEX_HASH, NODE_BORDER_WIDTH } from 'constants/constants'
+import { DEFAULT_NODE_SIZE, NODE_BORDER_WIDTH } from 'constants/constants'
 import { ThemeContextProvider } from 'context/ThemeContext'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
 import { useCoreComponents } from 'hooks/useCoreComponents/useCoreComponents'
-
-dayjs.extend(utc)
+import { useGitGraphData } from 'hooks/useGitGraphData'
+import { useHeadCommit } from 'hooks/useHeadCommit'
+import { useIndexCommit } from 'hooks/useIndexCommit'
+import { usePaging } from 'hooks/usePaging'
 
 export const GitLogCore = <T,>({
   children,
@@ -45,34 +45,12 @@ export const GitLogCore = <T,>({
     componentName
   })
 
-  const { graphData, allCommits } = useMemo<{ graphData: GraphData<T>, allCommits: Commit<T>[] }>(() => {
-    const { children, parents, hashToCommit } = computeRelationships(entries, headCommitHash)
-    const sortedCommits = temporalTopologicalSort([...hashToCommit.values()], children, hashToCommit)
-    const filteredCommits = filter?.(sortedCommits) ?? sortedCommits
-
-    const graphDataBuilder = new GraphDataBuilder<T>({
-      commits: sortedCommits,
-      filteredCommits,
-      children,
-      parents,
-      currentBranch
-    })
-
-    const { graphWidth, positions, edges } = graphDataBuilder.build()
-
-    return {
-      allCommits: sortedCommits,
-      graphData: {
-        children,
-        parents,
-        hashToCommit,
-        graphWidth,
-        positions,
-        edges,
-        commits: filteredCommits
-      }
-    }
-  }, [currentBranch, entries, filter, headCommitHash])
+  const { graphData, allCommits } = useGitGraphData({
+    entries,
+    currentBranch,
+    headCommitHash,
+    filter
+  })
 
   const [nodeSize, setNodeSize] = useState(DEFAULT_NODE_SIZE)
   const [graphOrientation, setGraphOrientation] = useState<GraphOrientation>('normal')
@@ -81,7 +59,6 @@ export const GitLogCore = <T,>({
 
   const smallestAvailableGraphWidth = graphData.graphWidth * (nodeSize + (NODE_BORDER_WIDTH * 2))
 
-  // TODO: Are we using graphWidth here or just ditching enableResize?
   const [, setGraphWidth] = useState(defaultGraphWidth ?? smallestAvailableGraphWidth)
 
   const handleSelectCommit = useCallback((commit?: Commit<T>) => {
@@ -94,62 +71,22 @@ export const GitLogCore = <T,>({
     onPreviewCommit?.(commit)
   }, [onPreviewCommit])
 
-  const headCommit = useMemo<Commit<T> | undefined>(() => {
-    if (isServerSidePaginated) {
-      return allCommits.find(({ hash }) => {
-        return hash === headCommitHash
-      })
-    }
+  const headCommit = useHeadCommit({
+    allCommits,
+    currentBranch,
+    headCommitHash,
+    isServerSidePaginated
+  })
 
-    return allCommits.find(({ branch }) => {
-      return branch.includes(currentBranch)
-    })
-  }, [allCommits, currentBranch, headCommitHash, isServerSidePaginated])
+  const indexCommit = useIndexCommit(headCommit)
 
-  const indexCommit = useMemo<Commit | undefined>(() => {
-    if (!headCommit) {
-      return undefined
-    }
-
-    const today = dayjs.utc().toISOString()
-
-    return {
-      hash: INDEX_HASH,
-      branch: headCommit.branch,
-      parents: [headCommit.hash],
-      children: [],
-      authorDate: today,
-      message: '// WIP',
-      committerDate: today,
-      isBranchTip: false
-    }
-  }, [headCommit])
-
-  const pageIndices = useMemo(() => {
-    const page = paging?.page ?? 0
-    const size = paging?.size ?? entries.length
-
-    const startIndex = Math.max(0, page * size)
-    const endIndex = Math.min(entries.length, startIndex + size)
-
-    return { startIndex, endIndex }
-  }, [entries.length, paging])
-
-  const isIndexVisible = useMemo<boolean>(() => {
-    if (!showGitIndex) {
-      return false
-    }
-
-    if (isServerSidePaginated) {
-      return entries.some(({ hash }) => hash === headCommitHash)
-    }
-
-    if (paging) {
-      return pageIndices.startIndex === 0
-    }
-
-    return true
-  }, [entries, headCommitHash, isServerSidePaginated, pageIndices.startIndex, paging, showGitIndex])
+  const { pageIndices, isIndexVisible } = usePaging({
+    entries,
+    paging,
+    showGitIndex,
+    isServerSidePaginated,
+    headCommitHash
+  })
 
   const graphContainerWidthValue = useMemo<number>(() => {
     if (defaultGraphWidth && defaultGraphWidth >= smallestAvailableGraphWidth) {
@@ -160,15 +97,11 @@ export const GitLogCore = <T,>({
   }, [defaultGraphWidth, smallestAvailableGraphWidth])
 
 
-  const value = useMemo<GitContextBag<T>>(() => ({
+  const dataValue = useMemo<GitDataContextBag<T>>(() => ({
     showTable: Boolean(table),
     showBranchesTags: Boolean(tags),
     classes,
     filter,
-    selectedCommit,
-    setSelectedCommit: handleSelectCommit,
-    previewedCommit,
-    setPreviewedCommit: handlePreviewCommit,
     remoteProviderUrlBuilder: urls,
     showHeaders,
     currentBranch,
@@ -176,25 +109,13 @@ export const GitLogCore = <T,>({
     indexCommit,
     graphData,
     paging: pageIndices,
-    rowSpacing,
-    graphWidth: graphContainerWidthValue,
-    setGraphWidth,
     headCommitHash,
     isServerSidePaginated,
     isIndexVisible,
-    nodeSize,
-    setNodeSize,
-    graphOrientation,
-    setGraphOrientation,
     indexStatus,
-    enablePreviewedCommitStyling,
-    enableSelectedCommitStyling
+    setGraphWidth
   }), [
     classes,
-    selectedCommit,
-    previewedCommit,
-    handleSelectCommit,
-    handlePreviewCommit,
     urls,
     filter,
     showHeaders,
@@ -203,27 +124,55 @@ export const GitLogCore = <T,>({
     indexCommit,
     graphData,
     pageIndices,
-    graphContainerWidthValue,
     setGraphWidth,
-    rowSpacing,
     table,
     tags,
     headCommitHash,
     isServerSidePaginated,
     isIndexVisible,
-    nodeSize,
-    graphOrientation,
-    indexStatus,
+    indexStatus
+  ])
+
+  const selectionValue = useMemo<GitSelectionContextBag<T>>(() => ({
+    selectedCommit,
+    setSelectedCommit: handleSelectCommit,
+    previewedCommit,
+    setPreviewedCommit: handlePreviewCommit,
+    enablePreviewedCommitStyling,
+    enableSelectedCommitStyling
+  }), [
+    selectedCommit,
+    previewedCommit,
+    handleSelectCommit,
+    handlePreviewCommit,
     enablePreviewedCommitStyling,
     enableSelectedCommitStyling
   ])
 
+  const viewValue = useMemo<GitViewContextBag>(() => ({
+    rowSpacing,
+    graphWidth: graphContainerWidthValue,
+    nodeSize,
+    setNodeSize,
+    graphOrientation,
+    setGraphOrientation
+  }), [
+    rowSpacing,
+    graphContainerWidthValue,
+    nodeSize,
+    graphOrientation
+  ])
+
   return (
-    <GitContext.Provider value={value as GitContextBag}>
-      <ThemeContextProvider theme={theme} colours={colours} graphWidth={graphData.graphWidth}>
-        <Layout tags={tags} graph={graph} table={table} />
-      </ThemeContextProvider>
-    </GitContext.Provider>
+    <GitDataContext.Provider value={dataValue as GitDataContextBag}>
+      <GitSelectionContext.Provider value={selectionValue as GitSelectionContextBag}>
+        <GitViewContext.Provider value={viewValue}>
+          <ThemeContextProvider theme={theme} colours={colours} graphWidth={graphData.graphWidth}>
+            <Layout tags={tags} graph={graph} table={table} />
+          </ThemeContextProvider>
+        </GitViewContext.Provider>
+      </GitSelectionContext.Provider>
+    </GitDataContext.Provider>
   )
 }
 

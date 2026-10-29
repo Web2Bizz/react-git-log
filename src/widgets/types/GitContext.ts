@@ -236,3 +236,58 @@ export type GraphPaging = {
    */
   endIndex: number
 }
+
+/**
+ * Data slice of the git log context: commits, graph,
+ * paging and remote configuration. Changes rarely and
+ * is safe to subscribe to from structural components.
+ */
+export type GitDataContextBag<T = unknown> = Pick<
+  GitContextBag<T>,
+  | 'currentBranch'
+  | 'headCommit'
+  | 'headCommitHash'
+  | 'indexCommit'
+  | 'graphData'
+  | 'remoteProviderUrlBuilder'
+  | 'classes'
+  | 'indexStatus'
+  | 'isServerSidePaginated'
+  | 'paging'
+  | 'isIndexVisible'
+  | 'filter'
+  | 'showTable'
+  | 'showBranchesTags'
+  | 'showHeaders'
+  | 'setGraphWidth'
+>
+
+/**
+ * Selection slice: hovered and selected commits.
+ * Isolated so hover updates do not re-render
+ * data or layout subscribers.
+ */
+export type GitSelectionContextBag<T = unknown> = Pick<
+  GitContextBag<T>,
+  | 'selectedCommit'
+  | 'setSelectedCommit'
+  | 'previewedCommit'
+  | 'setPreviewedCommit'
+  | 'enableSelectedCommitStyling'
+  | 'enablePreviewedCommitStyling'
+>
+
+/**
+ * View slice: sizing, spacing and orientation.
+ * Isolated so resize updates do not re-render
+ * data or selection subscribers.
+ */
+export type GitViewContextBag = Pick<
+  GitContextBag,
+  | 'rowSpacing'
+  | 'graphWidth'
+  | 'graphOrientation'
+  | 'setGraphOrientation'
+  | 'nodeSize'
+  | 'setNodeSize'
+>

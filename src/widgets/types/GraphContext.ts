@@ -4,7 +4,7 @@ import { Commit } from 'types/Commit'
 import { RowIndexToColumnStates } from 'types/useColumnData'
 import { CustomCommitNode } from 'types/Grid'
 
-export type GraphContextBag = {
+export type GraphContextBag<T = unknown> = {
   /**
    * Whether to show the commit hash
    * to the side of the node in the graph.
@@ -20,7 +20,7 @@ export type GraphContextBag = {
   /**
    * A custom commit node implementation.
    */
-  node?: CustomCommitNode<unknown>
+  node?: CustomCommitNode<T>
 
   /**
    * The height, in pixels, of the background
@@ -75,7 +75,7 @@ export type GraphContextBag = {
    * rendered on the graph relative to the
    * pagination configuration.
    */
-  visibleCommits: Commit<unknown>[]
+  visibleCommits: Commit<T>[]
 
   /**
    * True if the HEAD commit is visible

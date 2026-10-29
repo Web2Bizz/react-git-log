@@ -1,11 +1,11 @@
 import styles from './Table.module.scss'
 import dayjs from 'dayjs'
 import { useMemo } from 'react'
-import { Commit } from 'types/Commit'
 import { useTheme } from 'hooks/useTheme'
 import advancedFormat from 'dayjs/plugin/advancedFormat'
 import relativeTime from 'dayjs/plugin/relativeTime'
 import { useGitContext } from 'hooks/useGitContext'
+import { useVisibleCommits } from 'hooks/useVisibleCommits'
 import { usePlaceholderData } from 'hooks/usePlaceholderData'
 import { TableRow } from 'components/TableRow'
 import { TableContainer } from 'components/TableContainer'
@@ -15,7 +15,7 @@ import { TableContext, TableContextBag } from 'context/TableContext'
 dayjs.extend(advancedFormat)
 dayjs.extend(relativeTime)
 
-export const Table = ({
+export const Table = <T,>({
   row,
   className,
   styles: styleOverrides,
@@ -23,17 +23,15 @@ export const Table = ({
 }: TableProps) => {
   const { textColour, } = useTheme()
   const { placeholderData } = usePlaceholderData()
-  const { showHeaders, graphData, paging, indexCommit, isIndexVisible } = useGitContext()
+  const { showHeaders, graphData, paging, filter, indexCommit, isIndexVisible } = useGitContext<T>()
 
-  const tableData = useMemo<Commit[]>(() => {
-    const data = graphData.commits.slice(paging?.startIndex, paging?.endIndex)
-
-    if (isIndexVisible && indexCommit) {
-      data.unshift(indexCommit)
-    }
-
-    return data
-  }, [graphData.commits, paging?.startIndex, paging?.endIndex, isIndexVisible, indexCommit])
+  const { tableData } = useVisibleCommits({
+    commits: graphData.commits,
+    filter,
+    paging,
+    indexCommit,
+    isIndexVisible
+  })
 
   const tableContextValue = useMemo<TableContextBag>(() => ({
     timestampFormat
