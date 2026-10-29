@@ -1,6 +1,6 @@
 import styles from './TableRow.module.scss'
 import { GitLogTableRowProps } from 'types/TableRow'
-import { cloneElement, CSSProperties, useMemo } from 'react'
+import { cloneElement, CSSProperties, memo, useCallback, useMemo } from 'react'
 import { useTheme } from 'hooks/useTheme'
 import { useGitContext } from 'hooks/useGitContext'
 import { useSelectCommit } from 'hooks/useSelectCommit'
@@ -9,7 +9,7 @@ import { CommitMessageData } from 'components/CommitMessageData'
 import { AuthorData } from 'components/AuthorData'
 import { TimestampData } from 'components/TimestampData'
 
-export const TableRow = ({
+export const TableRow = memo(({
   row,
   index,
   commit,
@@ -69,19 +69,31 @@ export const TableRow = ({
   const shouldRenderHyphenValue = commit.hash === INDEX_HASH || Boolean(isPlaceholder)
   const shouldReduceOpacity = !isPlaceholder && (isMergeCommit || commit.hash === INDEX_HASH)
 
-  const tableDataStyle: CSSProperties = {
+  const tableDataStyle: CSSProperties = useMemo(() => ({
     lineHeight: `${ROW_HEIGHT}px`,
     color: shiftAlphaChannel(textColour, shouldReduceOpacity ? DIMMED_TEXT_OPACITY : 1),
     ...backgroundStyles,
     ...dataStyleOverrides
-  }
-  
+  }), [textColour, shiftAlphaChannel, shouldReduceOpacity, backgroundStyles, dataStyleOverrides])
+
+  const handleMouseOut = useCallback(() => {
+    selectCommitHandler.onMouseOut()
+  }, [selectCommitHandler])
+
+  const handleClick = useCallback(() => {
+    selectCommitHandler.onClick(commit)
+  }, [selectCommitHandler, commit])
+
+  const handleMouseOver = useCallback(() => {
+    selectCommitHandler.onMouseOver(commit)
+  }, [selectCommitHandler, commit])
+
   const rowContainerProps = {
     id: `react-git-log-table-row-${index}`,
-    onMouseOut: selectCommitHandler.onMouseOut,
+    onMouseOut: handleMouseOut,
     'data-testid': `react-git-log-table-row-${index}`,
-    onClick: () => selectCommitHandler.onClick(commit),
-    onMouseOver: () => selectCommitHandler.onMouseOver(commit)
+    onClick: handleClick,
+    onMouseOver: handleMouseOver
   }
 
   if (row) {
@@ -127,4 +139,4 @@ export const TableRow = ({
       />
     </div>
   )
-}
+})

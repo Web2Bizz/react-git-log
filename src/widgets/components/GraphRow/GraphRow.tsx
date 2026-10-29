@@ -2,9 +2,14 @@ import { GraphRowProps } from 'types/GraphRow'
 import { GraphColumn } from 'components/GraphColumn'
 import { useGraphContext } from 'hooks/useGraphContext'
 import { INDEX_HASH } from 'constants/constants'
+import { memo, useMemo } from 'react'
 
-export const GraphRow = ({ id, commit, columns }: GraphRowProps) => {
+export const GraphRow = memo(({ id, commit, columns }: GraphRowProps) => {
   const { graphWidth, orientation } = useGraphContext()
+
+  const commitNodeIndex = useMemo(() => {
+    return columns.findIndex(col => col.isNode)
+  }, [columns])
 
   return (
     <>
@@ -18,7 +23,7 @@ export const GraphRow = ({ id, commit, columns }: GraphRowProps) => {
             rowIndex={id}
             commit={commit}
             index={normalisedIndex}
-            commitNodeIndex={columns.findIndex(col => col.isNode)}
+            commitNodeIndex={commitNodeIndex}
             key={`row_${commit ? commit.hash : INDEX_HASH}_column_${normalisedIndex}}`}
             // If there is no state for the given index, then we're in a virtual column, so use an empty state
             state={columns[normalisedIndex] ?? {}}
@@ -27,4 +32,4 @@ export const GraphRow = ({ id, commit, columns }: GraphRowProps) => {
       })}
     </>
   )
-}
+})

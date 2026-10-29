@@ -1,13 +1,13 @@
 import classNames from 'classnames'
 import styles from './VerticalLine.module.scss'
-import { CSSProperties, useMemo } from 'react'
+import { CSSProperties, memo, useMemo } from 'react'
 import { VerticalLineProps } from 'types/VerticalLine'
 import { useGitContext } from 'hooks/useGitContext'
 import { BreakPoint } from 'components/BreakPoint'
 import { useGraphContext } from 'hooks/useGraphContext'
 import { INDEX_HASH } from 'constants/constants'
 
-export const VerticalLine = ({ state, columnIndex, columnColour, commit, indexCommitNodeBorder, isIndex }: VerticalLineProps) => {
+export const VerticalLine = memo(({ state, columnIndex, columnColour, commit, indexCommitNodeBorder, isIndex }: VerticalLineProps) => {
   const { breakPointTheme } = useGraphContext()
   const { headCommit, isServerSidePaginated, headCommitHash, isIndexVisible } = useGitContext()
 
@@ -213,4 +213,4 @@ export const VerticalLine = ({ state, columnIndex, columnColour, commit, indexCo
       )}
     </div>
   )
-}
+})

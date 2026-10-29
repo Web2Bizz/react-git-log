@@ -1,11 +1,11 @@
 import classNames from 'classnames'
 import styles from './HorizontalLine.module.scss'
-import { CSSProperties, useMemo } from 'react'
+import { CSSProperties, memo, useMemo } from 'react'
 import { HorizontalLineProps } from 'types/HorizontalLine'
 import { useTheme } from 'hooks/useTheme'
 import { useGraphContext } from 'hooks/useGraphContext'
 
-export const HorizontalLine = ({ state, columnIndex, commitNodeIndex, columnColour }: HorizontalLineProps) => {
+export const HorizontalLine = memo(({ state, columnIndex, commitNodeIndex, columnColour }: HorizontalLineProps) => {
   const { orientation } = useGraphContext()
   const { getGraphColumnColour } = useTheme()
 
@@ -63,4 +63,4 @@ export const HorizontalLine = ({ state, columnIndex, commitNodeIndex, columnColo
       className={classNames(styles.line, styles.horizontal)}
     />
   )
-}
+})

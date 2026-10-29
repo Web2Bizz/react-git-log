@@ -2,7 +2,7 @@ import { GraphColumnProps } from 'types/GraphColumn'
 import { CommitNode } from 'components/CommitNode'
 import styles from './GraphColumn.module.scss'
 import { useTheme } from 'hooks/useTheme'
-import { CSSProperties, useMemo } from 'react'
+import { CSSProperties, memo, useCallback, useMemo } from 'react'
 import { useGitContext } from 'hooks/useGitContext'
 import { useSelectCommit } from 'hooks/useSelectCommit'
 import { ColumnBackground } from 'components/ColumnBackground'
@@ -14,7 +14,7 @@ import { IndexPseudoCommitNode } from 'components/IndexPseudoCommitNode'
 import { useGraphContext } from 'hooks/useGraphContext'
 import { INDEX_HASH, INDEX_NODE_BORDER_OPACITY, PREVIEW_TAG_OPACITY } from 'constants/constants'
 
-export const GraphColumn = ({
+export const GraphColumn = memo(({
   index,
   rowIndex,
   state,
@@ -48,7 +48,7 @@ export const GraphColumn = ({
       return false
     }
 
-    const selectedCommitIsNotPreviewed = selectedCommit?.hash != previewedCommit?.hash
+    const selectedCommitIsNotPreviewed = selectedCommit?.hash !== previewedCommit?.hash
 
     // Always render a background in every column of the hovered row
     // so that the highlight spans the full available width,
@@ -82,26 +82,32 @@ export const GraphColumn = ({
     }
   }, [nodeSize, orientation, state.isLeftDownCurve, state.isLeftUpCurve])
 
-  const CustomCommitNode = node?.({
-    commit,
-    nodeSize,
-    rowIndex,
-    columnIndex: index,
-    isIndexPseudoNode: isRowCommitIndexNode,
-    colour: isRowCommitIndexNode ? shiftAlphaChannel(columnColour, INDEX_NODE_BORDER_OPACITY) : columnColour,
-  })
+  const CustomCommitNode = useMemo(() => {
+    if (!state.isNode) {
+      return undefined
+    }
 
-  const handleMouseOut = () => {
+    return node?.({
+      commit,
+      nodeSize,
+      rowIndex,
+      columnIndex: index,
+      isIndexPseudoNode: isRowCommitIndexNode,
+      colour: isRowCommitIndexNode ? shiftAlphaChannel(columnColour, INDEX_NODE_BORDER_OPACITY) : columnColour,
+    })
+  }, [state.isNode, node, commit, nodeSize, rowIndex, index, isRowCommitIndexNode, columnColour, shiftAlphaChannel])
+
+  const handleMouseOut = useCallback(() => {
     selectCommitHandler.onMouseOut()
-  }
+  }, [selectCommitHandler])
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     selectCommitHandler.onClick(commit)
-  }
+  }, [selectCommitHandler, commit])
 
-  const handleMouseOver = () => {
+  const handleMouseOver = useCallback(() => {
     selectCommitHandler.onMouseOver(commit)
-  }
+  }, [selectCommitHandler, commit])
 
   return (
     <button
@@ -206,4 +212,4 @@ export const GraphColumn = ({
       )}
     </button>
   )
-}
+})

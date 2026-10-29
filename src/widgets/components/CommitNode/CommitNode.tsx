@@ -1,7 +1,7 @@
 import styles from './CommitNode.module.scss'
 import { CommitNodeProps } from 'types/CommitNode'
 import { ArrowContainer, Popover, PopoverState } from 'react-tiny-popover'
-import { CSSProperties, useCallback, useMemo, useState } from 'react'
+import { CSSProperties, memo, useCallback, useMemo, useState } from 'react'
 import { useTheme } from 'hooks/useTheme'
 import { CommitNodeTooltip } from '../CommitNodeTooltip'
 import { useSelectCommit } from 'hooks/useSelectCommit'
@@ -10,7 +10,7 @@ import { useGraphContext } from 'hooks/useGraphContext'
 import { useGitContext } from 'hooks/useGitContext'
 import { getMergeNodeInnerSize } from 'utils/getMergeNodeInnerSize'
 
-export const CommitNode = ({ commit, colour }: CommitNodeProps) => {
+export const CommitNode = memo(({ commit, colour }: CommitNodeProps) => {
   const { selectCommitHandler } = useSelectCommit()
   const { remoteProviderUrlBuilder } = useGitContext()
   const { textColour, theme, getCommitNodeColours } = useTheme()
@@ -142,4 +142,4 @@ export const CommitNode = ({ commit, colour }: CommitNodeProps) => {
       </div>
     </Popover>
   )
-}
+})

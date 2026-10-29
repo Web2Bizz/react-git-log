@@ -1,8 +1,9 @@
 import styles from './CurvedEdge.module.scss'
 import { CurvedEdgeProps } from 'types/CurvedEdge'
 import { CURVE_SIZE } from 'constants/constants'
+import { memo } from 'react'
 
-export const CurvedEdge = ({ id, colour, path, dashed }: CurvedEdgeProps) => {
+export const CurvedEdge = memo(({ id, colour, path, dashed }: CurvedEdgeProps) => {
   return (
     <svg
       id={id}
@@ -23,4 +24,4 @@ export const CurvedEdge = ({ id, colour, path, dashed }: CurvedEdgeProps) => {
       />
     </svg>
   )
-}
+})

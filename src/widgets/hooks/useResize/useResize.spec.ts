@@ -17,6 +17,13 @@ describe('useResize', () => {
   beforeEach(() => {
     vi.clearAllMocks()
 
+    // requestAnimationFrame is async: run callbacks synchronously in tests.
+    vi.spyOn(window, 'requestAnimationFrame').mockImplementation((cb: FrameRequestCallback) => {
+      cb(0)
+      return 0
+    })
+    vi.spyOn(window, 'cancelAnimationFrame').mockImplementation(() => {})
+
     // Mock GitContext
     vi.spyOn(GitContext, 'useGitContext').mockReturnValue(gitContextBag({
       graphWidth: 300,
