@@ -1,4 +1,4 @@
-import { GraphMatrixColumns } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrixColumns'
+import { GraphMatrixColumns } from 'components/graph/strategies/grid/graph-matrix-builder/GraphMatrixColumns'
 
 export type GraphColumnDataProps = {
   visibleCommits: number

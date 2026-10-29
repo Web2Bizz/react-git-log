@@ -1,11 +1,11 @@
 import { Commit } from 'types/Commit'
 import { GitLogEntry } from 'types/GitLogEntry'
-import { GitContextBag } from 'context/GitContext'
-import { ThemeFunctions } from 'hooks/useTheme'
+import { GitContextBag } from 'context/git-context'
+import { ThemeFunctions } from 'hooks/use-theme'
 import { GraphData } from 'data'
-import { GraphColumnState } from 'components/GraphColumn'
-import { GraphContextBag } from 'context/GraphContext'
-import { ThemeContextBag } from 'context/ThemeContext'
+import { GraphColumnState } from 'components/graph-column'
+import { GraphContextBag } from 'context/graph-context'
+import { ThemeContextBag } from 'context/theme-context'
 
 export const commit = <T = unknown>(commit?: Partial<Commit<T>>): Commit<T> => ({
   hash: 'aa2c148',

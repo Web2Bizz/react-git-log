@@ -1,6 +1,6 @@
 import { CommitNodeLocation } from 'types/GraphData'
 import { Commit } from 'types/Commit'
-import { GraphMatrix } from 'components/Graph/strategies/Grid/GraphMatrixBuilder/GraphMatrix'
+import { GraphMatrix } from 'components/graph/strategies/grid/graph-matrix-builder/GraphMatrix'
 
 export type GraphMatrixBuilderProps = {
   graphWidth: number

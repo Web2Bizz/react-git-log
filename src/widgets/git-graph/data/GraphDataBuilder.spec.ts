@@ -1,6 +1,6 @@
 import { GraphDataBuilder } from './GraphDataBuilder'
-import { computeRelationships } from 'utils/computeRelationships'
-import { temporalTopologicalSort } from 'utils/temporalTopologicalSort'
+import { computeRelationships } from 'utils/compute-relationships'
+import { temporalTopologicalSort } from 'utils/temporal-topological-sort'
 import { GitLogEntry } from 'types/GitLogEntry'
 
 const entry = (hash: string, parents: string[] = [], branch = 'main'): GitLogEntry => ({
