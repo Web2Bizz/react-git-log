@@ -68,6 +68,8 @@ export const TableContainer = ({
   
   return (
     <div
+      role='table'
+      aria-label='Git log commits'
       id='react-git-log-table'
       data-testid='react-git-log-table'
       style={{

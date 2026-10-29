@@ -47,12 +47,14 @@ export const Table = <T,>({
       >
         {showHeaders && (
           <div
+            role='row'
             className={styles.head}
             id='react-git-log-table-head'
             style={styleOverrides?.thead}
             data-testid='react-git-log-table-head'
           >
             <div
+              role='columnheader'
               className={styles.header}
               style={{ color: textColour }}
               id='react-git-log-table-header-commit-message'
@@ -62,6 +64,7 @@ export const Table = <T,>({
             </div>
 
             <div
+              role='columnheader'
               className={styles.header}
               style={{ color: textColour }}
               id='react-git-log-table-header-author'
@@ -71,6 +74,7 @@ export const Table = <T,>({
             </div>
 
             <div
+              role='columnheader'
               className={styles.header}
               style={{ color: textColour }}
               id='react-git-log-table-header-timestamp'

@@ -113,6 +113,8 @@ export const TableRow = memo(({
   return (
     <div
       {...rowContainerProps}
+      role='row'
+      aria-selected={isRowSelected}
       style={rowStyleOverrides}
       className={styles.row}
       {...props}

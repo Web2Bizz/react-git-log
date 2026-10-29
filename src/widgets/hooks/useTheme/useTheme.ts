@@ -28,7 +28,7 @@ export const useTheme = (): ThemeFunctions => {
   const shiftAlphaChannel = useCallback((rgb: string, opacity: number) => {
     const matches = rgb?.match(/\d+/g)
 
-    if (rgb && matches != null) {
+    if (rgb && matches !== null) {
       const [r_fg, g_fg, b_fg] = matches.map(Number)
       const backgroundRgb = theme === 'dark' ? 'rgb(0, 0, 0)' : 'rgb(255, 255, 255)'
       const bgMatches = backgroundRgb.match(/\d+/g)

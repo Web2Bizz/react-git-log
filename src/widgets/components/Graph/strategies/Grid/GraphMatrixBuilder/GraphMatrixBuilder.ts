@@ -88,7 +88,12 @@ export class GraphMatrixBuilder {
    */
   public drawIndexPseudoCommitEdge() {
     if (this._headCommit && this._isIndexVisible && this._positions.has(this._headCommit.hash)) {
-      const headCommitRowIndex = this._positions.get(this._headCommit.hash)![0]
+      const headPosition = this._positions.get(this._headCommit.hash)
+      if (!headPosition) {
+        return
+      }
+
+      const headCommitRowIndex = headPosition[0]
 
       for (let rowIndex = 0; rowIndex <= headCommitRowIndex; rowIndex++) {
         const columnState = this._matrix.getColumns(rowIndex)

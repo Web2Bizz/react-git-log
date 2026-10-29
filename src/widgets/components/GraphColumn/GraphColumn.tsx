@@ -112,13 +112,14 @@ export const GraphColumn = memo(({
   return (
     <button
       style={style}
-      tabIndex={rowIndex}
+      tabIndex={0}
       onClick={handleClick}
       onBlur={handleMouseOut}
       onFocus={handleMouseOver}
       className={styles.column}
       onMouseOut={handleMouseOut}
       onMouseOver={handleMouseOver}
+      aria-label={`Commit ${commit.hash} graph column ${index}`}
       id={`graph-column-row-${rowIndex}-col-${index}`}
       data-testid={`graph-column-row-${rowIndex}-col-${index}`}
     >

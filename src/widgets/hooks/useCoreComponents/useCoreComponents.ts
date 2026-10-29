@@ -41,7 +41,7 @@ export const useCoreComponents = ({ children, componentName }: GetCoreComponents
     })
 
     if (!graph) {
-      console.warn(`react-git-log is not designed to work without a <${componentName}.GraphHTMLGrid /> component.`)
+      console.error(`react-git-log is not designed to work without a <${componentName}.GraphHTMLGrid /> component.`)
     }
 
     return { tags, graph, table }

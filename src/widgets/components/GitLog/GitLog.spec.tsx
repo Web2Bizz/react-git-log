@@ -194,8 +194,8 @@ describe('GitLog', () => {
     })
   })
 
-  it('should log a warning if the graph subcomponent is not rendered', () => {
-    const consoleWarn = vi.spyOn(console, 'warn')
+  it('should log an error if the graph subcomponent is not rendered', () => {
+    const consoleError = vi.spyOn(console, 'error').mockImplementation(() => {})
 
     render(
       <GitLog
@@ -204,7 +204,7 @@ describe('GitLog', () => {
       />
     )
 
-    expect(consoleWarn).toHaveBeenCalledExactlyOnceWith(
+    expect(consoleError).toHaveBeenCalledExactlyOnceWith(
       'react-git-log is not designed to work without a <GitLog.GraphHTMLGrid /> component.'
     )
   })

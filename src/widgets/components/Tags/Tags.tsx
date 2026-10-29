@@ -66,7 +66,8 @@ export const Tags = <T,>() => {
         : ((numberOfColumns - 1) * columnWidth) + (columnWidth / 2)) + paddingCompensation
     }
 
-    const columnIndex = graphData.positions.get(commit.hash)![1]
+    const position = graphData.positions.get(commit.hash)
+    const columnIndex = position?.[1] ?? 0
     const normalisedColumnIndex = isNormalOrientation
       ? columnIndex
       : numberOfColumns - 1 - columnIndex
